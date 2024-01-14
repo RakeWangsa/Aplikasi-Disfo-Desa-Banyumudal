@@ -3,10 +3,10 @@
 <main>
    <div class="row">
       <div class="col-5 logo-login">
-         <img src="{{ asset('admintemplate/img/farmhill-group.png') }}" alt="Logo Farmhill Group">
+         <img src="{{ asset('admintemplate/img/logo-login.png') }}" style="width:500px;height:auto" alt="Logo Farmhill Group">
       </div>
 
-      <div class="col-7 body-login">
+      <div class="col-7 body-login" style="">
          <div class="container">
             <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
                @if (session()->has('success'))
