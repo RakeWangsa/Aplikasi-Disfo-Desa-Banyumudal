@@ -28,6 +28,11 @@
     object-fit: cover; /* Adjust as needed (cover, contain, etc.) */
     width: 100px; /* Ensure the width takes up the full space within the carousel */
   }
+  .iklan-desa img {
+    height: 270px; /* Set the desired height */
+    object-fit: cover; /* Adjust as needed (cover, contain, etc.) */
+    width: 100%; /* Ensure the width takes up the full space within the carousel */
+  }
   .kolom {
     height: 100px; /* Set the height of the card */
     overflow-y: auto; /* Enable vertical scrolling */
@@ -43,91 +48,101 @@
           <h6 class="mb-0 text-light">Banyumudal Hebat Bermartabat</h6>
         </div>
         <div class="col-2" style="padding-right:2rem">
-          <h6 class="mb-0 text-light" style="float:right">Minggu, 14 Januari 2024</h6>
-          <h5 class="mb-0 text-light" style="float:right">14.00 WIB</h5>
+          <h6 class="mb-0 text-light text-end">Minggu, 15 Januari 2024</h6>
+          <h5 class="mb-0 text-light text-end">22.14 WIB</h5>
         </div>
+        
       </div>
   </div>
   
       <div class="row" style="margin-bottom:-10px">
         <div class="col-6">
-
           <div class="container py-4 px-4">
+  <div class="card text-dark border border-dark border-3">
+    <div id="carouselAgendaDesa" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item galeri-desa active">
+          <img src="{{asset('admintemplate/img/gotongroyong.jpg')}}" class="d-block w-100 card-img" alt="slide1">
+        </div>
+        <div class="carousel-item galeri-desa">
+          <img src="{{asset('admintemplate/img/posyandu.jpg')}}" class="d-block w-100 card-img" alt="slide2">
+        </div>
+        <div class="carousel-item galeri-desa">
+          <img src="{{asset('admintemplate/img/senam.jpg')}}" class="d-block w-100 card-img" alt="slide3">
+        </div>
+        <div class="card-img-overlay">
+          <h5 class="card-title text-dark text-center">
+            <span class="highlight-text d-inline-block align-middle" style="background-color: rgba(255, 255, 255, 0.5); border: 1px solid rgb(0, 0, 0); padding: 10px;">
+              <strong>AGENDA DESA</strong>
+            </span>
+          </h5>
+          <div class="row" style="margin-top:145px;margin-bottom:-20px">
+            <div class="col-3">
+              <div class="container px-4">
 
-            <div class="card text-dark border border-dark border-3" style="height:340px;object-fit:cover;width:100%">
-              <img src="{{asset('admintemplate/img/gotongroyong.jpg')}}" class="card-img" style="height:340px;object-fit:cover;width:100%">
-              <div class="card-img-overlay">
-                <h5 class="card-title text-dark text-center">
-                  <span class="highlight-text d-inline-block align-middle" style="background-color: rgba(255, 255, 255, 0.5); border: 1px solid rgb(0, 0, 0); padding: 10px;">
-                    <strong>AGENDA DESA</strong>
-                  </span>
-                </h5>
-                <div class="row" style="margin-top:145px;margin-bottom:-20px">
-                  <div class="col-3">
-                    <div class="container px-4">
+                <div class="row" style="border-radius: 10px; border: 1px solid #000000;background-color: rgba(255, 255, 255, 0.6);">
+                  <div class="col">
+                    <p class="card-text text-center text-dark" style="height:30px;font-size:15px;margin-top:2px;"><strong id="waktu"></strong></p>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            <div class="col-9">
 
-                      <div class="row" style="border-radius: 10px; border: 1px solid #000000;background-color: rgba(255, 255, 255, 0.5);">
-                        <div class="col">
-                          <p class="card-text text-center text-dark" style="height:30px;font-size:15px;margin-top:2px;"><strong>08.00 - 10.00</strong></p>
-                        </div>
+            </div>
+          </div>
+          <div class="row">
+
+            <div class="col-3">
+              <div class="container p-4">
+                {{-- <div class="card">
+                  <div class="card-body"> --}}
+                    <div class="row" style="border-radius: 10px 10px 0 0;border: 1px solid #000000;background-color: rgba(255, 23, 23, 0.6);">
+                      <div class="col">
+                        <p class="card-text text-center text-light" style="height:30px;"><strong id="bulanTahun"></strong></p>
                       </div>
-                      
                     </div>
-                  </div>
-                  <div class="col-9">
-
-                  </div>
-                </div>
-                <div class="row">
-
-                  <div class="col-3">
-                    <div class="container p-4">
-                      {{-- <div class="card">
-                        <div class="card-body"> --}}
-                          <div class="row bg-danger" style="border-radius: 10px 10px 0 0;border: 1px solid #DC3545;">
-                            <div class="col">
-                              <p class="card-text text-center text-light" style="height:30px;"><strong>Jan 2024</strong></p>
-                            </div>
-                          </div>
-                          <div class="row bg-light" style="border-radius: 0 0 10px 10px;border: 1px solid #DC3545;">
-                            <div class="col">
-                              <p class="card-text text-dark text-center" style="height:50px;padding-top:10px"><strong>12</strong></p>
-                            </div>
-                          </div>
-                        {{-- </div>
-                      </div> --}}
-                      
-                  </div>
-                  </div>
-                  <div class="col-9">
-                    <div class="container p-4">
-                      {{-- <div class="card">
-                        <div class="card-body"> --}}
-                          <div class="row">
-                            <div class="col" style="border-radius: 10px 10px 0 0;background-color: rgba(180, 180, 180, 0.5);border: 1px solid #000000;">
-                              <p class="card-text text-dark text-left" style="height:50px;padding-top:10px"><strong>Gotong royong pembangungan masjid</strong></p>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-1" style="border-radius: 0 0 0 10px;border: 1px solid #000000;border-top: none;border-right: none;background-color: rgba(255, 171, 171, 0.5);">
-                              {{-- <p class="card-text text-dark text-center" style="height:30px;padding-top:2px"><strong>B</strong></p> --}}
-                              <img src="{{asset('admintemplate/img/logo-lokasi.png')}}" style="width:20px;height:auto;">
-                            </div>
-                            <div class="col-11" style="background-color: rgba(255, 255, 255, 0.6);border-radius: 0 0 10px 0;border: 1px solid #000000;border-top: none;">
-                              <p class="card-text text-dark text-left" style="height:30px;padding-top:2px"><strong>Balai Desa</strong></p>
-                            </div>
-                          </div>
-                        {{-- </div>
-                      </div> --}}
+                    <div class="row" style="border-radius: 0 0 10px 10px;border: 1px solid #000000;border-top:none;background-color: rgba(255, 255, 255, 0.6);">
+                      <div class="col">
+                        <p class="card-text text-dark text-center" style="height:50px;padding-top:10px"><strong id="tanggal"></strong></p>
+                      </div>
                     </div>
-                  </div>
-
-
-                </div>
+                  {{-- </div>
+                </div> --}}
+                
+            </div>
+            </div>
+            <div class="col-9">
+              <div class="container p-4">
+                {{-- <div class="card">
+                  <div class="card-body"> --}}
+                    <div class="row">
+                      <div class="col" style="border-radius: 10px 10px 0 0;background-color: rgba(180, 180, 180, 0.6);border: 1px solid #000000;">
+                        <p class="card-text text-dark text-left" style="height:50px;padding-top:10px"><strong id="agenda"></strong></p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-1" style="border-radius: 0 0 0 10px;border: 1px solid #000000;border-top: none;border-right: none;background-color: rgba(255, 171, 171, 0.5);">
+                        {{-- <p class="card-text text-dark text-center" style="height:30px;padding-top:2px"><strong>B</strong></p> --}}
+                        <img src="{{asset('admintemplate/img/logo-lokasi.png')}}" style="width:20px;height:auto;">
+                      </div>
+                      <div class="col-11" style="background-color: rgba(255, 255, 255, 0.6);border-radius: 0 0 10px 0;border: 1px solid #000000;border-top: none;">
+                        <p class="card-text text-dark text-left" style="height:30px;padding-top:2px"><strong id="lokasi"></strong></p>
+                      </div>
+                    </div>
+                  {{-- </div>
+                </div> --}}
               </div>
             </div>
 
+
+          </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
         </div>
@@ -136,32 +151,22 @@
 
           <div class="container py-4 px-4">
             <div class="card text-dark border border-dark border-3">
-              <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item galeri-desa active">
-                    <img src="{{asset('admintemplate/img/fotodesa1.jpg')}}" class="d-block w-100 card-img" alt="slide1">
-                  </div>
-                  <div class="carousel-item galeri-desa">
-                    <img src="{{asset('admintemplate/img/fotodesa2.jpg')}}" class="d-block w-100 card-img" alt="slide2">
-                  </div>
-                  <div class="carousel-item galeri-desa">
-                    <img src="{{asset('admintemplate/img/fotodesa3.jpg')}}" class="d-block w-100 card-img" alt="slide3">
-                  </div>
-                </div>
-              </div>
+              <iframe id="youtubeVideo" width="100%" height="340" src="https://www.youtube.com/embed/L_I_KD9okgg?autoplay=1&loop=1&autopause=0&muted=1" frameborder="0" allow='autoplay' allowfullscreen></iframe>
             </div>
           </div>
+          
 
 
         </div>
 
 
       </div>
-
+      <div class="row">
+<div class="col-8">
       <div class="row" style="margin-bottom:10px">
         <div class="col d-flex justify-content-center">
 
-          <div class="card w-100 mx-4 border border-dark border-2" style="background-color: rgba(255, 255, 255, 0.5);">
+          <div class="card w-100 mx-4 border border-dark border-2" style="background-color: rgba(255, 255, 255, 0.6);">
             <div class="card-body">
                 <h5 class="card-title mb-0" style="border-bottom: 2px solid #000000;padding-bottom: 5px;"><strong>PENGUMUMAN</strong></h5>
                 <div class="kolom" id="scrollingDiv1">
@@ -200,7 +205,7 @@
       </div>
       <div class="col d-flex justify-content-center">
 
-        <div class="card w-100 mx-4 border border-dark border-2" style="background-color: rgba(255, 255, 255, 0.5);">
+        <div class="card w-100 mx-4 border border-dark border-2" style="background-color: rgba(255, 255, 255, 0.6);">
           <div class="card-body">
               <h5 class="card-title mb-0" style="border-bottom: 2px solid #000000;padding-bottom: 5px;"><strong>BERITA TERKINI</strong></h5>
               <div class="kolom" style="" id="scrollingDiv2">
@@ -239,139 +244,134 @@
       
 
     </div>
-    <div class="col d-flex justify-content-center">
-      <div class="card w-100 mx-4 border border-dark border-2" style="background-color: rgba(255, 255, 255, 0.5);">
-          <div class="card-body">
-              <h5 class="card-title mb-0" style="border-bottom: 2px solid #000000;padding-bottom: 5px;">
-                  <strong id="namaPemimpin"></strong>
-              </h5>
-              <div class="row">
-                  <div class="col-4">
-                      <div id="carouselExampleSlidesOnly" class="carousel slide" style="margin-top:5px" data-bs-ride="carousel">
-                          <div class="carousel-inner">
-                              <div class="carousel-item perangkat-desa active">
-                                  <img src="{{asset('admintemplate/img/prabowo.jpg')}}" class="d-block w-100 card-img" alt="slide1">
-                              </div>
-                              <div class="carousel-item perangkat-desa">
-                                  <img src="{{asset('admintemplate/img/putin.jpg')}}" class="d-block w-100 card-img" alt="slide2">
-                              </div>
-                              <div class="carousel-item perangkat-desa">
-                                  <img src="{{asset('admintemplate/img/bose.jpeg')}}" class="d-block w-100 card-img" alt="slide3">
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-8">
-                      <h6 style="margin-top:20px"><strong id="namaDetail">Prabowo Subianto</strong></h6>
-                      <h6 id="jabatanDetail">Presiden RI</h6>
-                  </div>
-              </div>
-          </div>
-      </div>
+
   </div>
 
+
+  <div class="row" style="margin-bottom:10px">
+    <div class="col d-flex justify-content-center">
+
+      <div class="card w-100 mx-4 border border-dark border-2" style="background-color: rgba(255, 255, 255, 0.6);">
+        <div class="card-body">
+            <h5 class="card-title mb-0" style="border-bottom: 2px solid #000000;padding-bottom: 5px;"><strong>PENDAPATAN</strong></h5>
+            <div class="kolom" id="scrollingDiv3">
+            <p class="card-text my-0"><br></p>
+            <p class="card-text my-0"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></p>
+            <p class="card-text my-0"><strong>Etiam tristique justo vel velit vehicula</strong></p>
+            <p class="card-text my-0"><strong>Sed eleifend orci non malesuada hendrerit.</strong></p>
+            <p class="card-text my-0"><strong>Proin ac ligula et justo vulputate accumsan.</strong></p>
+            <p class="card-text my-0"><strong>Vestibulum consectetur mauris ac risus convallis</strong></p>
+            <p class="card-text my-0"><strong>Nullam euismod lectus et est vehicula</strong></p>
+            <p class="card-text my-0"><strong>a fermentum tellus lacinia.</strong></p>
+            <p class="card-text my-0"><strong>Aenean condimentum justo vel sem venenatis</strong></p>
+            <p class="card-text my-0"><strong>vitae bibendum lectus condimentum</strong></p>
+            <p class="card-text my-0"><strong>Morbi in ipsum ac nunc consectetur suscipit</strong></p>
+            <p class="card-text my-0"><strong>Fusce facilisis quam id elit hendrerit.</strong></p>
+            <p class="card-text my-0"><strong>Duis cursus elit ut leo dictum</strong></p>
+            <p class="card-text my-0"><strong>id efficitur ex vulputate.</strong></p>
+            <p class="card-text my-0"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></p>
+            <p class="card-text my-0"><strong>Etiam tristique justo vel velit vehicula</strong></p>
+            <p class="card-text my-0"><strong>Sed eleifend orci non malesuada hendrerit.</strong></p>
+            <p class="card-text my-0"><strong>Proin ac ligula et justo vulputate accumsan.</strong></p>
+            <p class="card-text my-0"><strong>Vestibulum consectetur mauris ac risus convallis</strong></p>
+            <p class="card-text my-0"><strong>Nullam euismod lectus et est vehicula</strong></p>
+            <p class="card-text my-0"><strong>a fermentum tellus lacinia.</strong></p>
+            <p class="card-text my-0"><strong>Aenean condimentum justo vel sem venenatis</strong></p>
+            <p class="card-text my-0"><strong>vitae bibendum lectus condimentum</strong></p>
+            <p class="card-text my-0"><strong>Morbi in ipsum ac nunc consectetur suscipit</strong></p>
+            <p class="card-text my-0"><strong>Fusce facilisis quam id elit hendrerit.</strong></p>
+            <p class="card-text my-0"><strong>Duis cursus elit ut leo dictum</strong></p>
+            <p class="card-text my-0"><strong>id efficitur ex vulputate.</strong></p>
+          </div>
+        </div>
+    </div>
+    
+
+  </div>
+  <div class="col d-flex justify-content-center">
+
+    <div class="card w-100 mx-4 border border-dark border-2" style="background-color: rgba(255, 255, 255, 0.6);">
+      <div class="card-body">
+          <h5 class="card-title mb-0" style="border-bottom: 2px solid #000000;padding-bottom: 5px;"><strong>PENGELUARAN</strong></h5>
+          <div class="kolom" style="" id="scrollingDiv4">
+            <p class="card-text my-0"><br></p>
+            <p class="card-text my-0"><strong>Nullam euismod lectus et est vehicula</strong></p>
+            <p class="card-text my-0"><strong>a fermentum tellus lacinia.</strong></p>
+            <p class="card-text my-0"><strong>Aenean condimentum justo vel sem venenatis</strong></p>
+            <p class="card-text my-0"><strong>vitae bibendum lectus condimentum</strong></p>
+            <p class="card-text my-0"><strong>Morbi in ipsum ac nunc consectetur suscipit</strong></p>
+            <p class="card-text my-0"><strong>Fusce facilisis quam id elit hendrerit.</strong></p>
+            <p class="card-text my-0"><strong>Duis cursus elit ut leo dictum</strong></p>
+            <p class="card-text my-0"><strong>id efficitur ex vulputate.</strong></p>
+            <p class="card-text my-0"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></p>
+            <p class="card-text my-0"><strong>Etiam tristique justo vel velit vehicula</strong></p>
+            <p class="card-text my-0"><strong>Sed eleifend orci non malesuada hendrerit.</strong></p>
+            <p class="card-text my-0"><strong>Proin ac ligula et justo vulputate accumsan.</strong></p>
+            <p class="card-text my-0"><strong>Vestibulum consectetur mauris ac risus convallis</strong></p>
+            <p class="card-text my-0"><strong>Nullam euismod lectus et est vehicula</strong></p>                
+            <p class="card-text my-0"><strong>Nullam euismod lectus et est vehicula</strong></p>
+            <p class="card-text my-0"><strong>a fermentum tellus lacinia.</strong></p>
+            <p class="card-text my-0"><strong>Aenean condimentum justo vel sem venenatis</strong></p>
+            <p class="card-text my-0"><strong>vitae bibendum lectus condimentum</strong></p>
+            <p class="card-text my-0"><strong>Morbi in ipsum ac nunc consectetur suscipit</strong></p>
+            <p class="card-text my-0"><strong>Fusce facilisis quam id elit hendrerit.</strong></p>
+            <p class="card-text my-0"><strong>Duis cursus elit ut leo dictum</strong></p>
+            <p class="card-text my-0"><strong>id efficitur ex vulputate.</strong></p>
+            <p class="card-text my-0"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></p>
+            <p class="card-text my-0"><strong>Etiam tristique justo vel velit vehicula</strong></p>
+            <p class="card-text my-0"><strong>Sed eleifend orci non malesuada hendrerit.</strong></p>
+            <p class="card-text my-0"><strong>Proin ac ligula et justo vulputate accumsan.</strong></p>
+            <p class="card-text my-0"><strong>Vestibulum consectetur mauris ac risus convallis</strong></p>
+            <p class="card-text my-0"><strong>Nullam euismod lectus et est vehicula</strong></p>
+        </div>
       </div>
+  </div>
+  
 
-      <div class="row" style="margin-bottom:10px">
-        <div class="col d-flex justify-content-center">
+</div>
 
-          <div class="card w-100 mx-4 border border-dark border-2" style="background-color: rgba(255, 255, 255, 0.5);">
-            <div class="card-body">
-                <h5 class="card-title mb-0" style="border-bottom: 2px solid #000000;padding-bottom: 5px;"><strong>Pendapatan</strong></h5>
-                <div class="kolom" style="" id="scrollingDiv3">
-                <p class="card-text my-0"><br></p>
-                <p class="card-text my-0"><strong>Dana Desa Rp. 2.500.000,-</strong></p>
-                <p class="card-text my-0"><strong>Pendapatan Asli Desa Rp. 3.000.000,-</strong></p>
-                <p class="card-text my-0"><strong>BHP Rp. 1.000.000,-</strong></p>
-                <p class="card-text my-0"><strong>Banprov Rp. 2.000.000,-</strong></p>
-                <p class="card-text my-0"><strong>Pendapatan Asli Desa Rp. 3.000.000,-</strong></p>
-                <p class="card-text my-0"><strong>BHP Rp. 1.000.000,-</strong></p>
-                <p class="card-text my-0"><strong>Banprov Rp. 2.000.000,-</strong></p>
-                <p class="card-text my-0"><strong>Dana Desa Rp. 2.500.000,-</strong></p>
-                <p class="card-text my-0"><strong>Pendapatan Asli Desa Rp. 3.000.000,-</strong></p>
-                <p class="card-text my-0"><strong>BHP Rp. 1.000.000,-</strong></p>
-                <p class="card-text my-0"><strong>Banprov Rp. 2.000.000,-</strong></p>
-                <p class="card-text my-0"><strong>Dana Desa Rp. 2.500.000,-</strong></p>
-                <p class="card-text my-0"><strong>Pendapatan Asli Desa Rp. 3.000.000,-</strong></p>
-                <p class="card-text my-0"><strong>BHP Rp. 1.000.000,-</strong></p>
-                <p class="card-text my-0"><strong>Banprov Rp. 2.000.000,-</strong></p>
-                <p class="card-text my-0"><strong>Dana Desa Rp. 2.500.000,-</strong></p>
-                <p class="card-text my-0"><strong>Pendapatan Asli Desa Rp. 3.000.000,-</strong></p>
-                <p class="card-text my-0"><strong>BHP Rp. 1.000.000,-</strong></p>
-                <p class="card-text my-0"><strong>Banprov Rp. 2.000.000,-</strong></p>
-                <p class="card-text my-0"><strong>Dana Desa Rp. 2.500.000,-</strong></p>
-                <p class="card-text my-0"><strong>Pendapatan Asli Desa Rp. 3.000.000,-</strong></p>
-                <p class="card-text my-0"><strong>BHP Rp. 1.000.000,-</strong></p>
-                <p class="card-text my-0"><strong>Banprov Rp. 2.000.000,-</strong></p>
-                <p class="card-text my-0"><strong>Dana Desa Rp. 2.500.000,-</strong></p>
-                <p class="card-text my-0"><strong>Pendapatan Asli Desa Rp. 3.000.000,-</strong></p>
-                <p class="card-text my-0"><strong>BHP Rp. 1.000.000,-</strong></p>
-                <p class="card-text my-0"><strong>Banprov Rp. 2.000.000,-</strong></p>
-                <p class="card-text my-0"><strong>Dana Desa Rp. 2.500.000,-</strong></p>
-                <p class="card-text my-0"><strong>Pendapatan Asli Desa Rp. 3.000.000,-</strong></p>
-                <p class="card-text my-0"><strong>BHP Rp. 1.000.000,-</strong></p>
-                <p class="card-text my-0"><strong>Banprov Rp. 2.000.000,-</strong></p>
-              </div>
+</div>
+
+</div>
+
+<div class="col-4">
+  <div class="row" style="margin-bottom:10px">
+<div class="col d-flex justify-content-center">
+
+      <div class="card w-100 mx-4 border border-dark border-2" style="background-color: rgba(255, 255, 255, 0.6);">
+        <div class="card-body">
+            <h5 class="card-title mb-0" style="border-bottom: 2px solid #000000;padding-bottom: 5px;">
+                <strong>IKLAN</strong>
+            </h5>
+            <div class="row">
+                <div class="col">
+                    <div class="carousel slide" style="margin-top:5px" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item iklan-desa active">
+                                <img src="{{asset('admintemplate/img/iklankfc.jpeg')}}" class="d-block w-100 card-img" alt="slide1">
+                            </div>
+                            <div class="carousel-item iklan-desa">
+                                <img src="{{asset('admintemplate/img/iklansprite.jpg')}}" class="d-block w-100 card-img" alt="slide2">
+                            </div>
+                            <div class="carousel-item iklan-desa">
+                                <img src="{{asset('admintemplate/img/iklanmobil.jpg')}}" class="d-block w-100 card-img" alt="slide3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        
-  
-      </div>
-      <div class="col d-flex justify-content-center">
-
-        <div class="card w-100 mx-4 border border-dark border-2" style="background-color: rgba(255, 255, 255, 0.5);">
-          <div class="card-body">
-              <h5 class="card-title mb-0" style="border-bottom: 2px solid #000000;padding-bottom: 5px;"><strong>Pengeluaran</strong></h5>
-              <div class="kolom" style="" id="scrollingDiv4">
-              <p class="card-text my-0"><br></p>
-              <p class="card-text my-0"><strong>Dana Desa Rp. 2.500.000,-</strong></p>
-              <p class="card-text my-0"><strong>Pendapatan Asli Desa Rp. 3.000.000,-</strong></p>
-              <p class="card-text my-0"><strong>BHP Rp. 1.000.000,-</strong></p>
-              <p class="card-text my-0"><strong>Banprov Rp. 2.000.000,-</strong></p>
-              <p class="card-text my-0"><strong>Dana Desa Rp. 2.500.000,-</strong></p>
-              <p class="card-text my-0"><strong>Pendapatan Asli Desa Rp. 3.000.000,-</strong></p>
-              <p class="card-text my-0"><strong>BHP Rp. 1.000.000,-</strong></p>
-              <p class="card-text my-0"><strong>Banprov Rp. 2.000.000,-</strong></p>
-              <p class="card-text my-0"><strong>Pendapatan Asli Desa Rp. 3.000.000,-</strong></p>
-              <p class="card-text my-0"><strong>BHP Rp. 1.000.000,-</strong></p>
-              <p class="card-text my-0"><strong>Banprov Rp. 2.000.000,-</strong></p>
-              <p class="card-text my-0"><strong>Dana Desa Rp. 2.500.000,-</strong></p>
-              <p class="card-text my-0"><strong>Pendapatan Asli Desa Rp. 3.000.000,-</strong></p>
-              <p class="card-text my-0"><strong>BHP Rp. 1.000.000,-</strong></p>
-              <p class="card-text my-0"><strong>Banprov Rp. 2.000.000,-</strong></p>
-              <p class="card-text my-0"><strong>Dana Desa Rp. 2.500.000,-</strong></p>
-              <p class="card-text my-0"><strong>Pendapatan Asli Desa Rp. 3.000.000,-</strong></p>
-              <p class="card-text my-0"><strong>BHP Rp. 1.000.000,-</strong></p>
-              <p class="card-text my-0"><strong>Banprov Rp. 2.000.000,-</strong></p>
-              <p class="card-text my-0"><strong>Dana Desa Rp. 2.500.000,-</strong></p>
-              <p class="card-text my-0"><strong>Pendapatan Asli Desa Rp. 3.000.000,-</strong></p>
-              <p class="card-text my-0"><strong>BHP Rp. 1.000.000,-</strong></p>
-              <p class="card-text my-0"><strong>Banprov Rp. 2.000.000,-</strong></p>
-              <p class="card-text my-0"><strong>Dana Desa Rp. 2.500.000,-</strong></p>
-              <p class="card-text my-0"><strong>Pendapatan Asli Desa Rp. 3.000.000,-</strong></p>
-              <p class="card-text my-0"><strong>BHP Rp. 1.000.000,-</strong></p>
-              <p class="card-text my-0"><strong>Banprov Rp. 2.000.000,-</strong></p>
-              <p class="card-text my-0"><strong>Dana Desa Rp. 2.500.000,-</strong></p>
-              <p class="card-text my-0"><strong>Pendapatan Asli Desa Rp. 3.000.000,-</strong></p>
-              <p class="card-text my-0"><strong>BHP Rp. 1.000.000,-</strong></p>
-              <p class="card-text my-0"><strong>Banprov Rp. 2.000.000,-</strong></p>
-              <p class="card-text my-0"><strong>Dana Desa Rp. 2.500.000,-</strong></p>
-              <p class="card-text my-0"><strong>Pendapatan Asli Desa Rp. 3.000.000,-</strong></p>
-              <p class="card-text my-0"><strong>BHP Rp. 1.000.000,-</strong></p>
-              <p class="card-text my-0"><strong>Banprov Rp. 2.000.000,-</strong></p>
-            </div>
-          </div>
-      </div>
-      
-
     </div>
-    <div class="col bg-warning d-flex justify-content-center">
-
-
     
 
     </div>
-       </div>
+  </div>
+
+  
+</div>
+</div>
+
+
 
        <div class="row">
          <div class="col bg-danger">
@@ -526,17 +526,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     
-    <script>
-      // Mendeteksi perubahan slide pada carousel setelah selesai transisi
-      $('#carouselExampleSlidesOnly').on('slid.bs.carousel', function (e) {
+    {{-- <script>
+      $('#carouselPerangkatDesa').on('slid.bs.carousel', function (e) {
           var nama;
           var jabatan;
-  
-          // Memperbarui teks berdasarkan slide yang aktif
+
           switch (e.to) {
               case 0:
                   nama = 'Prabowo Subianto';
-                  jabatan = 'Presiden RI';
+                  jabatan = 'Presiden Indonesia';
                   break;
               case 1:
                   nama = 'Vladimir Putin';
@@ -550,13 +548,70 @@
                   nama = '';
           }
   
-          // Memperbarui teks pada elemen dengan id 'namaDetail' dan 'jabatanDetail'
           $('#namaDetail').text(nama);
           $('#jabatanDetail').text(jabatan);
       });
-  </script>
+  </script> --}}
+
+<script>
+  // Mendeteksi perubahan slide pada carousel setelah selesai transisi
+  $('#carouselAgendaDesa').on('slid.bs.carousel', function (e) {
+      var waktu;
+      var bulanTahun;
+      var tanggal;
+      var agenda;
+      var lokasi;
+
+
+      // Memperbarui teks berdasarkan slide yang aktif
+      switch (e.to) {
+          case 0:
+              waktu = '08.00-10.00';
+              bulanTahun = 'Jan 2024';
+              tanggal = '20';
+              agenda = 'Gotong royong membersihkan sungai';
+              lokasi = 'Sungai Banyumudal';
+              break;
+          case 1:
+              waktu = '09.00-12.00';
+              bulanTahun = 'Jan 2024';
+              tanggal = '23';
+              agenda = 'Posyandu balita';
+              lokasi = 'Balai Desa';
+              break;
+          case 2:
+              waktu = '16.00-17.00';
+              bulanTahun = 'Jan 2024';
+              tanggal = '25';
+              agenda = 'Senam ibu-ibu';
+              lokasi = 'MI Dewi Masyithoh';
+              break;
+      }
+
+      // Memperbarui teks pada elemen dengan id 'namaDetail' dan 'jabatanDetail'
+      $('#waktu').text(waktu);
+      $('#bulanTahun').text(bulanTahun);
+      $('#tanggal').text(tanggal);
+      $('#agenda').text(agenda);
+      $('#lokasi').text(lokasi);
+  });
+</script>
+
+<script>
+  // Menangkap elemen iframe
+  var youtubeVideo = document.getElementById('youtubeVideo');
+
+  // Menambahkan event listener untuk mendeteksi akhir video
+  youtubeVideo.addEventListener('ended', function() {
+    // Memulai ulang video
+    youtubeVideo.src += "?autoplay=1";
+  });
+</script>
+
   
   
   
   </body>
 </html>
+
+
