@@ -21,6 +21,7 @@ class Display extends Model
         'text4',
         'link_youtube',
         'running_text',
-
+        'header',
+        'sub_header'
     ];
 }

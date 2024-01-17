@@ -14,8 +14,8 @@
           <img src="{{asset('admintemplate/img/logopemalang.png')}}" style="width:100px;float:right" class="mr-2">
         </div>
         <div class="col-9">
-          <h3 class="mb-0 text-light">Display Informasi Pemerintah Desa Banyumudal</h3>
-          <h6 class="mb-0 text-light">Banyumudal Hebat Bermartabat</h6>
+          <h3 class="mb-0 text-light">{{ $display->header }}</h3>
+          <h6 class="mb-0 text-light">{{ $display->sub_header }}</h6>
         </div>
         <div class="col-2" style="padding-right:2rem">
           <h6 class="mb-0 text-light text-end">Minggu, 15 Januari 2024</h6>
@@ -65,6 +65,14 @@
   <div class="container p-4">
 
     <div class="mb-4">
+      <label for="linkYoutube" class="form-label"><strong>Header :</strong></label>
+      <input type="text" class="form-control" style="border: 1px solid #000000;" value="{{ $display->header }}" name="header" id="header" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-4">
+      <label for="linkYoutube" class="form-label"><strong>Sub Header :</strong></label>
+      <input type="text" class="form-control" style="border: 1px solid #000000;" value="{{ $display->sub_header }}" name="sub_header" id="sub_header" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-4">
       <label for="InputTitle4" class="form-label"><strong>Agenda Desa :</strong></label>
       <input type="file" class="form-control" style="border: 1px solid #000000;" name="profileImage" id="fileInput" accept="image/*">
     </div>
@@ -74,7 +82,7 @@
     </div>
     <div class="mb-4">
       <label for="linkYoutube" class="form-label"><strong>Link Youtube :</strong></label>
-      <input type="text" class="form-control" style="border: 1px solid #000000;" id="linkYoutube" aria-describedby="emailHelp">
+      <input type="text" class="form-control" style="border: 1px solid #000000;" name="linkYoutube" id="linkYoutube" value="{{ $display->link_youtube }}" aria-describedby="emailHelp">
     </div>
     <div class="mb-4">
       <label for="InputText1" class="form-label"><strong>Running Text :</strong></label>

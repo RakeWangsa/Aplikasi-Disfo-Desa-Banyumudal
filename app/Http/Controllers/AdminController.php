@@ -23,6 +23,8 @@ class AdminController extends Controller
     {
         $display = Display::find(1);
         $display->update([
+            'header' => $request->header,
+            'sub_header' => $request->sub_header,
             'title1' => $request->title1,
             'text1' => $request->text1,
             'title2' => $request->title2,
@@ -32,6 +34,7 @@ class AdminController extends Controller
             'title4' => $request->title4,
             'text4' => $request->text4,
             'running_text' => $request->running_text,
+            'link_youtube' => $request->linkYoutube,
         ]);
     
         return redirect('/admin');

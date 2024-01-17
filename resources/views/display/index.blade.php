@@ -44,8 +44,8 @@
           <img src="{{asset('admintemplate/img/logopemalang.png')}}" style="width:100px;float:right" class="mr-2">
         </div>
         <div class="col-9">
-          <h3 class="mb-0 text-light">Display Informasi Pemerintah Desa Banyumudal</h3>
-          <h6 class="mb-0 text-light">Banyumudal Hebat Bermartabat</h6>
+          <h3 class="mb-0 text-light">{{ $display->header }}</h3>
+          <h6 class="mb-0 text-light">{{ $display->sub_header }}</h6>
         </div>
         <div class="col-2" style="padding-right:2rem">
           <h6 class="mb-0 text-light text-end">Minggu, 15 Januari 2024</h6>
@@ -151,7 +151,7 @@
 
           <div class="container py-4 px-4">
             <div class="card text-dark border border-dark border-3">
-              <iframe id="youtubeVideo" width="100%" height="340" src="https://www.youtube.com/embed/L_I_KD9okgg?autoplay=1&loop=1&autopause=0&muted=1" frameborder="0" allow='autoplay' allowfullscreen></iframe>
+              <iframe id="youtubeVideo" width="100%" height="340" src="https://www.youtube.com/embed/{{ $display->link_youtube }}?autoplay=1&loop=1&autopause=0&muted=1" frameborder="0" allow='autoplay' allowfullscreen></iframe>
             </div>
           </div>
           
