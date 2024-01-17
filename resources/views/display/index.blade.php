@@ -168,7 +168,7 @@
 
           <div class="card w-100 mx-4 border border-dark border-2" style="background-color: rgba(255, 255, 255, 0.6);">
             <div class="card-body">
-                <h5 class="card-title mb-0" style="border-bottom: 2px solid #000000;padding-bottom: 5px;"><strong>PENGUMUMAN</strong></h5>
+                <h5 class="card-title mb-0" style="border-bottom: 2px solid #000000;padding-bottom: 5px;"><strong>{{ $display->title1 }}</strong></h5>
                 <div class="kolom" id="scrollingDiv1">
                 <p class="card-text my-0"><br></p>
                 <p class="card-text my-0"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></p>
@@ -207,7 +207,7 @@
 
         <div class="card w-100 mx-4 border border-dark border-2" style="background-color: rgba(255, 255, 255, 0.6);">
           <div class="card-body">
-              <h5 class="card-title mb-0" style="border-bottom: 2px solid #000000;padding-bottom: 5px;"><strong>BERITA TERKINI</strong></h5>
+              <h5 class="card-title mb-0" style="border-bottom: 2px solid #000000;padding-bottom: 5px;"><strong>{{ $display->title2 }}</strong></h5>
               <div class="kolom" style="" id="scrollingDiv2">
                 <p class="card-text my-0"><br></p>
                 <p class="card-text my-0"><strong>Nullam euismod lectus et est vehicula</strong></p>
@@ -253,7 +253,7 @@
 
       <div class="card w-100 mx-4 border border-dark border-2" style="background-color: rgba(255, 255, 255, 0.6);">
         <div class="card-body">
-            <h5 class="card-title mb-0" style="border-bottom: 2px solid #000000;padding-bottom: 5px;"><strong>PENDAPATAN</strong></h5>
+            <h5 class="card-title mb-0" style="border-bottom: 2px solid #000000;padding-bottom: 5px;"><strong>{{ $display->title3 }}</strong></h5>
             <div class="kolom" id="scrollingDiv3">
             <p class="card-text my-0"><br></p>
             <p class="card-text my-0"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></p>
@@ -292,7 +292,7 @@
 
     <div class="card w-100 mx-4 border border-dark border-2" style="background-color: rgba(255, 255, 255, 0.6);">
       <div class="card-body">
-          <h5 class="card-title mb-0" style="border-bottom: 2px solid #000000;padding-bottom: 5px;"><strong>PENGELUARAN</strong></h5>
+          <h5 class="card-title mb-0" style="border-bottom: 2px solid #000000;padding-bottom: 5px;"><strong>{{ $display->title4 }}</strong></h5>
           <div class="kolom" style="" id="scrollingDiv4">
             <p class="card-text my-0"><br></p>
             <p class="card-text my-0"><strong>Nullam euismod lectus et est vehicula</strong></p>
