@@ -27,11 +27,12 @@
       
 
   {{-- <div class="container p-4"> --}}
+    <form action="{{ route('updateDisplay') }}" method="post">
+      @csrf
     <div class="row">
       <div class="col-6"> 
         <div class="container p-4">
-  <form action="{{ route('updateDisplay') }}" method="post">
-    @csrf
+
     <div class="mb-4">
       <label for="InputTitle1" class="form-label"><strong>Title 1 :</strong></label>
       <input type="text" class="form-control mb-1" id="InputTitle1" aria-describedby="emailHelp" style="border: 1px solid #000000;" name="title1" value="{{ $display->title1 }}">
@@ -56,14 +57,13 @@
       <label for="InputText1" class="form-label"><strong>Text 4 :</strong></label>
       <textarea class="form-control" style="border: 1px solid #000000;" id="InputText1" aria-describedby="emailHelp" name="text4">{{ $display->text4 }}</textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+
 </div>
 </div>
 
 <div class="col-6"> 
   <div class="container p-4">
-  <form>
+
     <div class="mb-4">
       <label for="InputTitle4" class="form-label"><strong>Agenda Desa :</strong></label>
       <input type="file" class="form-control" style="border: 1px solid #000000;" name="profileImage" id="fileInput" accept="image/*">
@@ -78,13 +78,14 @@
     </div>
     <div class="mb-4">
       <label for="InputText1" class="form-label"><strong>Running Text :</strong></label>
-      <textarea class="form-control" style="border: 1px solid #000000;" id="InputText1" aria-describedby="emailHelp"></textarea>
+      <textarea class="form-control" style="border: 1px solid #000000;" id="InputText1" aria-describedby="emailHelp" name="running_text">{{ $display->running_text }}</textarea>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+
 </div>
 </div>
 </div>
+</form>
 {{-- </div> --}}
 
 

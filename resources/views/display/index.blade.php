@@ -171,32 +171,7 @@
                 <h5 class="card-title mb-0" style="border-bottom: 2px solid #000000;padding-bottom: 5px;"><strong>{{ $display->title1 }}</strong></h5>
                 <div class="kolom" id="scrollingDiv1">
                 <p class="card-text my-0"><br></p>
-                <p class="card-text my-0"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></p>
-                <p class="card-text my-0"><strong>Etiam tristique justo vel velit vehicula</strong></p>
-                <p class="card-text my-0"><strong>Sed eleifend orci non malesuada hendrerit.</strong></p>
-                <p class="card-text my-0"><strong>Proin ac ligula et justo vulputate accumsan.</strong></p>
-                <p class="card-text my-0"><strong>Vestibulum consectetur mauris ac risus convallis</strong></p>
-                <p class="card-text my-0"><strong>Nullam euismod lectus et est vehicula</strong></p>
-                <p class="card-text my-0"><strong>a fermentum tellus lacinia.</strong></p>
-                <p class="card-text my-0"><strong>Aenean condimentum justo vel sem venenatis</strong></p>
-                <p class="card-text my-0"><strong>vitae bibendum lectus condimentum</strong></p>
-                <p class="card-text my-0"><strong>Morbi in ipsum ac nunc consectetur suscipit</strong></p>
-                <p class="card-text my-0"><strong>Fusce facilisis quam id elit hendrerit.</strong></p>
-                <p class="card-text my-0"><strong>Duis cursus elit ut leo dictum</strong></p>
-                <p class="card-text my-0"><strong>id efficitur ex vulputate.</strong></p>
-                <p class="card-text my-0"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></p>
-                <p class="card-text my-0"><strong>Etiam tristique justo vel velit vehicula</strong></p>
-                <p class="card-text my-0"><strong>Sed eleifend orci non malesuada hendrerit.</strong></p>
-                <p class="card-text my-0"><strong>Proin ac ligula et justo vulputate accumsan.</strong></p>
-                <p class="card-text my-0"><strong>Vestibulum consectetur mauris ac risus convallis</strong></p>
-                <p class="card-text my-0"><strong>Nullam euismod lectus et est vehicula</strong></p>
-                <p class="card-text my-0"><strong>a fermentum tellus lacinia.</strong></p>
-                <p class="card-text my-0"><strong>Aenean condimentum justo vel sem venenatis</strong></p>
-                <p class="card-text my-0"><strong>vitae bibendum lectus condimentum</strong></p>
-                <p class="card-text my-0"><strong>Morbi in ipsum ac nunc consectetur suscipit</strong></p>
-                <p class="card-text my-0"><strong>Fusce facilisis quam id elit hendrerit.</strong></p>
-                <p class="card-text my-0"><strong>Duis cursus elit ut leo dictum</strong></p>
-                <p class="card-text my-0"><strong>id efficitur ex vulputate.</strong></p>
+                <p class="card-text my-0"><strong>{!! nl2br($display->text1) !!}</strong></p>
               </div>
             </div>
         </div>
@@ -210,34 +185,7 @@
               <h5 class="card-title mb-0" style="border-bottom: 2px solid #000000;padding-bottom: 5px;"><strong>{{ $display->title2 }}</strong></h5>
               <div class="kolom" style="" id="scrollingDiv2">
                 <p class="card-text my-0"><br></p>
-                <p class="card-text my-0"><strong>Nullam euismod lectus et est vehicula</strong></p>
-                <p class="card-text my-0"><strong>a fermentum tellus lacinia.</strong></p>
-                <p class="card-text my-0"><strong>Aenean condimentum justo vel sem venenatis</strong></p>
-                <p class="card-text my-0"><strong>vitae bibendum lectus condimentum</strong></p>
-                <p class="card-text my-0"><strong>Morbi in ipsum ac nunc consectetur suscipit</strong></p>
-                <p class="card-text my-0"><strong>Fusce facilisis quam id elit hendrerit.</strong></p>
-                <p class="card-text my-0"><strong>Duis cursus elit ut leo dictum</strong></p>
-                <p class="card-text my-0"><strong>id efficitur ex vulputate.</strong></p>
-                <p class="card-text my-0"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></p>
-                <p class="card-text my-0"><strong>Etiam tristique justo vel velit vehicula</strong></p>
-                <p class="card-text my-0"><strong>Sed eleifend orci non malesuada hendrerit.</strong></p>
-                <p class="card-text my-0"><strong>Proin ac ligula et justo vulputate accumsan.</strong></p>
-                <p class="card-text my-0"><strong>Vestibulum consectetur mauris ac risus convallis</strong></p>
-                <p class="card-text my-0"><strong>Nullam euismod lectus et est vehicula</strong></p>                
-                <p class="card-text my-0"><strong>Nullam euismod lectus et est vehicula</strong></p>
-                <p class="card-text my-0"><strong>a fermentum tellus lacinia.</strong></p>
-                <p class="card-text my-0"><strong>Aenean condimentum justo vel sem venenatis</strong></p>
-                <p class="card-text my-0"><strong>vitae bibendum lectus condimentum</strong></p>
-                <p class="card-text my-0"><strong>Morbi in ipsum ac nunc consectetur suscipit</strong></p>
-                <p class="card-text my-0"><strong>Fusce facilisis quam id elit hendrerit.</strong></p>
-                <p class="card-text my-0"><strong>Duis cursus elit ut leo dictum</strong></p>
-                <p class="card-text my-0"><strong>id efficitur ex vulputate.</strong></p>
-                <p class="card-text my-0"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></p>
-                <p class="card-text my-0"><strong>Etiam tristique justo vel velit vehicula</strong></p>
-                <p class="card-text my-0"><strong>Sed eleifend orci non malesuada hendrerit.</strong></p>
-                <p class="card-text my-0"><strong>Proin ac ligula et justo vulputate accumsan.</strong></p>
-                <p class="card-text my-0"><strong>Vestibulum consectetur mauris ac risus convallis</strong></p>
-                <p class="card-text my-0"><strong>Nullam euismod lectus et est vehicula</strong></p>
+                <p class="card-text my-0"><strong>{!! nl2br($display->text2) !!}</strong></p>
             </div>
           </div>
       </div>
@@ -256,32 +204,7 @@
             <h5 class="card-title mb-0" style="border-bottom: 2px solid #000000;padding-bottom: 5px;"><strong>{{ $display->title3 }}</strong></h5>
             <div class="kolom" id="scrollingDiv3">
             <p class="card-text my-0"><br></p>
-            <p class="card-text my-0"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></p>
-            <p class="card-text my-0"><strong>Etiam tristique justo vel velit vehicula</strong></p>
-            <p class="card-text my-0"><strong>Sed eleifend orci non malesuada hendrerit.</strong></p>
-            <p class="card-text my-0"><strong>Proin ac ligula et justo vulputate accumsan.</strong></p>
-            <p class="card-text my-0"><strong>Vestibulum consectetur mauris ac risus convallis</strong></p>
-            <p class="card-text my-0"><strong>Nullam euismod lectus et est vehicula</strong></p>
-            <p class="card-text my-0"><strong>a fermentum tellus lacinia.</strong></p>
-            <p class="card-text my-0"><strong>Aenean condimentum justo vel sem venenatis</strong></p>
-            <p class="card-text my-0"><strong>vitae bibendum lectus condimentum</strong></p>
-            <p class="card-text my-0"><strong>Morbi in ipsum ac nunc consectetur suscipit</strong></p>
-            <p class="card-text my-0"><strong>Fusce facilisis quam id elit hendrerit.</strong></p>
-            <p class="card-text my-0"><strong>Duis cursus elit ut leo dictum</strong></p>
-            <p class="card-text my-0"><strong>id efficitur ex vulputate.</strong></p>
-            <p class="card-text my-0"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></p>
-            <p class="card-text my-0"><strong>Etiam tristique justo vel velit vehicula</strong></p>
-            <p class="card-text my-0"><strong>Sed eleifend orci non malesuada hendrerit.</strong></p>
-            <p class="card-text my-0"><strong>Proin ac ligula et justo vulputate accumsan.</strong></p>
-            <p class="card-text my-0"><strong>Vestibulum consectetur mauris ac risus convallis</strong></p>
-            <p class="card-text my-0"><strong>Nullam euismod lectus et est vehicula</strong></p>
-            <p class="card-text my-0"><strong>a fermentum tellus lacinia.</strong></p>
-            <p class="card-text my-0"><strong>Aenean condimentum justo vel sem venenatis</strong></p>
-            <p class="card-text my-0"><strong>vitae bibendum lectus condimentum</strong></p>
-            <p class="card-text my-0"><strong>Morbi in ipsum ac nunc consectetur suscipit</strong></p>
-            <p class="card-text my-0"><strong>Fusce facilisis quam id elit hendrerit.</strong></p>
-            <p class="card-text my-0"><strong>Duis cursus elit ut leo dictum</strong></p>
-            <p class="card-text my-0"><strong>id efficitur ex vulputate.</strong></p>
+            <p class="card-text my-0"><strong>{!! nl2br($display->text3) !!}</strong></p>
           </div>
         </div>
     </div>
@@ -295,34 +218,7 @@
           <h5 class="card-title mb-0" style="border-bottom: 2px solid #000000;padding-bottom: 5px;"><strong>{{ $display->title4 }}</strong></h5>
           <div class="kolom" style="" id="scrollingDiv4">
             <p class="card-text my-0"><br></p>
-            <p class="card-text my-0"><strong>Nullam euismod lectus et est vehicula</strong></p>
-            <p class="card-text my-0"><strong>a fermentum tellus lacinia.</strong></p>
-            <p class="card-text my-0"><strong>Aenean condimentum justo vel sem venenatis</strong></p>
-            <p class="card-text my-0"><strong>vitae bibendum lectus condimentum</strong></p>
-            <p class="card-text my-0"><strong>Morbi in ipsum ac nunc consectetur suscipit</strong></p>
-            <p class="card-text my-0"><strong>Fusce facilisis quam id elit hendrerit.</strong></p>
-            <p class="card-text my-0"><strong>Duis cursus elit ut leo dictum</strong></p>
-            <p class="card-text my-0"><strong>id efficitur ex vulputate.</strong></p>
-            <p class="card-text my-0"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></p>
-            <p class="card-text my-0"><strong>Etiam tristique justo vel velit vehicula</strong></p>
-            <p class="card-text my-0"><strong>Sed eleifend orci non malesuada hendrerit.</strong></p>
-            <p class="card-text my-0"><strong>Proin ac ligula et justo vulputate accumsan.</strong></p>
-            <p class="card-text my-0"><strong>Vestibulum consectetur mauris ac risus convallis</strong></p>
-            <p class="card-text my-0"><strong>Nullam euismod lectus et est vehicula</strong></p>                
-            <p class="card-text my-0"><strong>Nullam euismod lectus et est vehicula</strong></p>
-            <p class="card-text my-0"><strong>a fermentum tellus lacinia.</strong></p>
-            <p class="card-text my-0"><strong>Aenean condimentum justo vel sem venenatis</strong></p>
-            <p class="card-text my-0"><strong>vitae bibendum lectus condimentum</strong></p>
-            <p class="card-text my-0"><strong>Morbi in ipsum ac nunc consectetur suscipit</strong></p>
-            <p class="card-text my-0"><strong>Fusce facilisis quam id elit hendrerit.</strong></p>
-            <p class="card-text my-0"><strong>Duis cursus elit ut leo dictum</strong></p>
-            <p class="card-text my-0"><strong>id efficitur ex vulputate.</strong></p>
-            <p class="card-text my-0"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></p>
-            <p class="card-text my-0"><strong>Etiam tristique justo vel velit vehicula</strong></p>
-            <p class="card-text my-0"><strong>Sed eleifend orci non malesuada hendrerit.</strong></p>
-            <p class="card-text my-0"><strong>Proin ac ligula et justo vulputate accumsan.</strong></p>
-            <p class="card-text my-0"><strong>Vestibulum consectetur mauris ac risus convallis</strong></p>
-            <p class="card-text my-0"><strong>Nullam euismod lectus et est vehicula</strong></p>
+            <p class="card-text my-0"><strong>{!! nl2br($display->text4) !!}</strong></p>
         </div>
       </div>
   </div>
@@ -375,7 +271,7 @@
 
        <div class="row">
          <div class="col bg-danger">
-            <marquee behavior="scroll" class="custom-marquee text-light" direction="left">SELAMAT DATANG DI BALAI DESA BANYUMUDAL | JL RAYA MOGA-PULOSARI KM 01, BANYUMUDAL, MOGA, KABUPATEN PEMALANG  | BANYUMUDAL HEBAT BERMARTABAT</marquee>
+            <marquee behavior="scroll" class="custom-marquee text-light" direction="left">{{ $display->running_text }}</marquee>
 
          </div>
       </div>

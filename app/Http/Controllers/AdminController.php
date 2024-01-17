@@ -31,8 +31,11 @@ class AdminController extends Controller
             'text3' => $request->text3,
             'title4' => $request->title4,
             'text4' => $request->text4,
-
+            'running_text' => $request->running_text,
         ]);
-        return redirect('/admin');  
+    
+        return redirect('/admin');
     }
+    
+    
 }
