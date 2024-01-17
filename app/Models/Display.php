@@ -19,6 +19,7 @@ class Display extends Model
         'text3',
         'title4',
         'text4',
+        'title5',
         'link_youtube',
         'running_text',
         'header',

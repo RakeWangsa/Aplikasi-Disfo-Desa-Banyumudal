@@ -47,9 +47,9 @@
           <h3 class="mb-0 text-light">{{ $display->header }}</h3>
           <h6 class="mb-0 text-light">{{ $display->sub_header }}</h6>
         </div>
-        <div class="col-2" style="padding-right:2rem">
-          <h6 class="mb-0 text-light text-end">Minggu, 15 Januari 2024</h6>
-          <h5 class="mb-0 text-light text-end">22.14 WIB</h5>
+        <div class="col-2" style="padding-right: 2rem">
+          <h6 class="mb-0 text-light text-end" id="dateDisplay"></h6>
+          <h5 class="mb-0 text-light text-end" id="timeDisplay"></h5>
         </div>
         
       </div>
@@ -237,21 +237,20 @@
       <div class="card w-100 mx-4 border border-dark border-2" style="background-color: rgba(255, 255, 255, 0.6);">
         <div class="card-body">
             <h5 class="card-title mb-0" style="border-bottom: 2px solid #000000;padding-bottom: 5px;">
-                <strong>IKLAN</strong>
+                <strong>{{ $display->title5 }}</strong>
             </h5>
             <div class="row">
                 <div class="col">
                     <div class="carousel slide" style="margin-top:5px" data-bs-ride="carousel">
                         <div class="carousel-inner">
-                            <div class="carousel-item iklan-desa active">
-                                <img src="{{asset('admintemplate/img/iklankfc.jpeg')}}" class="d-block w-100 card-img" alt="slide1">
-                            </div>
-                            <div class="carousel-item iklan-desa">
-                                <img src="{{asset('admintemplate/img/iklansprite.jpg')}}" class="d-block w-100 card-img" alt="slide2">
-                            </div>
-                            <div class="carousel-item iklan-desa">
-                                <img src="{{asset('admintemplate/img/iklanmobil.jpg')}}" class="d-block w-100 card-img" alt="slide3">
-                            </div>
+
+                          @foreach($iklan as $key => $data)
+                          <div class="carousel-item iklan-desa {{ $key == 0 ? 'active' : '' }}">
+                            <img src="{{ asset('iklan/' . $data->foto) }}" class="d-block w-100 card-img" alt="slide2">
+                        </div>
+                        @endforeach
+
+
                         </div>
                     </div>
                 </div>
@@ -505,7 +504,31 @@
 </script>
 
   
+<script>
+  function updateClock() {
+    // Mendapatkan waktu saat ini
+    var now = new Date();
   
+    // Mendapatkan elemen-elemen HTML yang akan diubah
+    var dateDisplay = document.getElementById('dateDisplay');
+    var timeDisplay = document.getElementById('timeDisplay');
+  
+    // Mendapatkan informasi tanggal dan waktu
+    var dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    var timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false, timeZoneName: 'short' };
+  
+    // Memperbarui teks pada elemen HTML
+    dateDisplay.textContent = now.toLocaleDateString('id-ID', dateOptions);
+    timeDisplay.textContent = now.toLocaleTimeString('id-ID', timeOptions).replace(/\./g, ' : ');
+  }
+  
+  // Memanggil fungsi updateClock setiap detik (1000 milidetik)
+  setInterval(updateClock, 1000);
+  
+  // Memanggil fungsi updateClock pada saat halaman pertama kali dimuat
+  updateClock();
+</script>
+
   
   </body>
 </html>

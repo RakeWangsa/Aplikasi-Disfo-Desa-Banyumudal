@@ -23,3 +23,4 @@ Route::get('/login', [LoginController::class, 'index'])->name('login')->middlewa
 Route::get('/display', [DisplayController::class, 'index'])->name('index')->middleware('guest');
 Route::get('/admin', [AdminController::class, 'index'])->name('index')->middleware('guest');
 route::post('/updateDisplay', [AdminController::class, 'updateDisplay'])->name('updateDisplay')->middleware('guest');
+route::get('/deleteIklan/{id}', [AdminController::class, 'deleteIklan'])->name('deleteIklan')->middleware('guest');
