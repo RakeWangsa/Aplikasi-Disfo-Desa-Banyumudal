@@ -23,6 +23,7 @@ class Display extends Model
         'link_youtube',
         'running_text',
         'header',
-        'sub_header'
+        'sub_header',
+        'tampilan'
     ];
 }

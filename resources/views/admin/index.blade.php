@@ -34,6 +34,21 @@
         <div class="container p-4">
 
     <div class="mb-4">
+      <p class="form-label"><strong>Tampilan :</strong></p>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="Tampilan 1" @if($display->tampilan=="Tampilan 1") checked @endif>
+        <label class="form-check-label" for="flexRadioDefault1">
+          Tampilan 1
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="Tampilan 2" @if($display->tampilan=="Tampilan 2") checked @endif>
+        <label class="form-check-label" for="flexRadioDefault2">
+          Tampilan 2
+        </label>
+      </div>
+    </div>
+    <div class="mb-4">
       <label for="InputTitle1" class="form-label"><strong>Title 1 :</strong></label>
       <input type="text" class="form-control mb-1" id="InputTitle1" aria-describedby="emailHelp" style="border: 1px solid #000000;" name="title1" value="{{ $display->title1 }}" required>
       <label for="InputText1" class="form-label"><strong>Text 1 :</strong></label>

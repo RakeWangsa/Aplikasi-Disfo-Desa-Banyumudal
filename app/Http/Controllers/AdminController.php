@@ -35,11 +35,17 @@ class AdminController extends Controller
             'iklan' => $iklan, 
             'agenda' => $agenda,
             'jumlahAgenda' => $jumlahAgenda,
-            'background' => $background
+            'background' => $background,
         ]);
     }
     public function updateDisplay(Request $request)
     {
+        if($request->input('flexRadioDefault')!=Null){
+            $tampilan = Display::find(1);
+            $tampilan->update([
+                'tampilan' => $request->input('flexRadioDefault'),
+            ]);
+        }
 
         if ($request->hasFile('profileImage')) {
             $images = $request->file('profileImage');

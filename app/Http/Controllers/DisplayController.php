@@ -24,13 +24,25 @@ class DisplayController extends Controller
         ->select('*')
         ->first();
         $jumlahAgenda=count($agenda);
-        return view('display.index', [
-            'title' => 'Display',
-            'display' => $display,
-            'iklan' => $iklan,
-            'agenda' => $agenda,  
-            'jumlahAgenda' => $jumlahAgenda,  
-            'background' => $background
-        ]);
+        if($display->tampilan=="Tampilan 1"){
+            return view('display.index', [
+                'title' => 'Display',
+                'display' => $display,
+                'iklan' => $iklan,
+                'agenda' => $agenda,  
+                'jumlahAgenda' => $jumlahAgenda,  
+                'background' => $background
+            ]);
+        }else{
+            return view('display.index2', [
+                'title' => 'Display',
+                'display' => $display,
+                'iklan' => $iklan,
+                'agenda' => $agenda,  
+                'jumlahAgenda' => $jumlahAgenda,  
+                'background' => $background
+            ]);
+        }
+
     }
 }
