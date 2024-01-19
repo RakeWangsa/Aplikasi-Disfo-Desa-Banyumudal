@@ -9,7 +9,7 @@
   <body style="background-size: cover;background: linear-gradient(to right, rgb(156, 156, 156), rgb(225, 225, 225));">
 
    <div class="row">
-      <div class="col bg-dark d-flex align-items-center">
+      <div class="col d-flex align-items-center" style="background:linear-gradient(to right, rgb(37, 37, 37), rgb(65, 65, 65));">
           <div class="col-1">
           <img src="{{asset('admintemplate/img/logopemalang.png')}}" style="width:100px;float:right" class="mr-2">
         </div>
@@ -35,27 +35,27 @@
 
     <div class="mb-4">
       <label for="InputTitle1" class="form-label"><strong>Title 1 :</strong></label>
-      <input type="text" class="form-control mb-1" id="InputTitle1" aria-describedby="emailHelp" style="border: 1px solid #000000;" name="title1" value="{{ $display->title1 }}">
+      <input type="text" class="form-control mb-1" id="InputTitle1" aria-describedby="emailHelp" style="border: 1px solid #000000;" name="title1" value="{{ $display->title1 }}" required>
       <label for="InputText1" class="form-label"><strong>Text 1 :</strong></label>
-      <textarea class="form-control" style="border: 1px solid #000000;height: 150px;" id="InputText1" aria-describedby="emailHelp" name="text1">{{ $display->text1 }}</textarea>
+      <textarea class="form-control" style="border: 1px solid #000000;height: 150px;" id="InputText1" aria-describedby="emailHelp" name="text1" required>{{ $display->text1 }}</textarea>
     </div>
     <div class="mb-4">
       <label for="InputTitle1" class="form-label"><strong>Title 2 :</strong></label>
-      <input type="text" class="form-control mb-1" id="InputTitle1" aria-describedby="emailHelp" style="border: 1px solid #000000;" name="title2" value="{{ $display->title2 }}">
+      <input type="text" class="form-control mb-1" id="InputTitle1" aria-describedby="emailHelp" style="border: 1px solid #000000;" name="title2" value="{{ $display->title2 }}" required>
       <label for="InputText1" class="form-label"><strong>Text 2 :</strong></label>
-      <textarea class="form-control" style="border: 1px solid #000000;height: 150px;" id="InputText1" aria-describedby="emailHelp" name="text2">{{ $display->text2 }}</textarea>
+      <textarea class="form-control" style="border: 1px solid #000000;height: 150px;" id="InputText1" aria-describedby="emailHelp" name="text2" required>{{ $display->text2 }}</textarea>
     </div>    
     <div class="mb-4">
       <label for="InputTitle1" class="form-label"><strong>Title 3 :</strong></label>
-      <input type="text" class="form-control mb-1" id="InputTitle1" aria-describedby="emailHelp" style="border: 1px solid #000000;" name="title3" value="{{ $display->title3 }}">
+      <input type="text" class="form-control mb-1" id="InputTitle1" aria-describedby="emailHelp" style="border: 1px solid #000000;" name="title3" value="{{ $display->title3 }}" required>
       <label for="InputText1" class="form-label"><strong>Text 3 :</strong></label>
-      <textarea class="form-control" style="border: 1px solid #000000;height: 150px;" id="InputText1" aria-describedby="emailHelp" name="text3">{{ $display->text3 }}</textarea>
+      <textarea class="form-control" style="border: 1px solid #000000;height: 150px;" id="InputText1" aria-describedby="emailHelp" name="text3" required>{{ $display->text3 }}</textarea>
     </div>
     <div class="mb-4">
       <label for="InputTitle1" class="form-label"><strong>Title 4 :</strong></label>
-      <input type="text" class="form-control mb-1" id="InputTitle1" aria-describedby="emailHelp" style="border: 1px solid #000000;" name="title4" value="{{ $display->title4 }}">
+      <input type="text" class="form-control mb-1" id="InputTitle1" aria-describedby="emailHelp" style="border: 1px solid #000000;" name="title4" value="{{ $display->title4 }}" required>
       <label for="InputText1" class="form-label"><strong>Text 4 :</strong></label>
-      <textarea class="form-control" style="border: 1px solid #000000;height: 150px;" id="InputText1" aria-describedby="emailHelp" name="text4">{{ $display->text4 }}</textarea>
+      <textarea class="form-control" style="border: 1px solid #000000;height: 150px;" id="InputText1" aria-describedby="emailHelp" name="text4" required>{{ $display->text4 }}</textarea>
     </div>
 
 </div>
@@ -66,11 +66,11 @@
 
     <div class="mb-4">
       <label for="linkYoutube" class="form-label"><strong>Header :</strong></label>
-      <input type="text" class="form-control" style="border: 1px solid #000000;" value="{{ $display->header }}" name="header" id="header" aria-describedby="emailHelp">
+      <input type="text" class="form-control" style="border: 1px solid #000000;" value="{{ $display->header }}" name="header" id="header" required>
     </div>
     <div class="mb-4">
       <label for="linkYoutube" class="form-label"><strong>Sub Header :</strong></label>
-      <input type="text" class="form-control" style="border: 1px solid #000000;" value="{{ $display->sub_header }}" name="sub_header" id="sub_header" aria-describedby="emailHelp">
+      <input type="text" class="form-control" style="border: 1px solid #000000;" value="{{ $display->sub_header }}" name="sub_header" id="sub_header" required>
     </div>
     <div class="mb-4">
       <p class="form-label"><strong>Agenda Desa :</strong></p>
@@ -134,7 +134,7 @@
     
     <div class="mb-4">
       <label for="InputTitle1" class="form-label"><strong>Title 5 :</strong></label>
-      <input type="text" class="form-control mb-1" id="InputTitle1" aria-describedby="emailHelp" style="border: 1px solid #000000;" name="title5" value="{{ $display->title5 }}">
+      <input type="text" class="form-control mb-1" id="InputTitle1" aria-describedby="emailHelp" style="border: 1px solid #000000;" name="title5" value="{{ $display->title5 }}" required>
     </div>
     <div class="mb-4">
       <div class="row mb-4">
@@ -171,11 +171,11 @@
 
     <div class="mb-4">
       <label for="linkYoutube" class="form-label"><strong>Link Youtube :</strong></label>
-      <input type="text" class="form-control" style="border: 1px solid #000000;" name="linkYoutube" id="linkYoutube" value="{{ $display->link_youtube }}" aria-describedby="emailHelp">
+      <input type="text" class="form-control" style="border: 1px solid #000000;" name="linkYoutube" id="linkYoutube" value="{{ $display->link_youtube }}" aria-describedby="emailHelp" required>
     </div>
     <div class="mb-4">
       <label for="InputText1" class="form-label"><strong>Running Text :</strong></label>
-      <textarea class="form-control" style="border: 1px solid #000000;" id="InputText1" aria-describedby="emailHelp" name="running_text">{{ $display->running_text }}</textarea>
+      <textarea class="form-control" style="border: 1px solid #000000;" id="InputText1" aria-describedby="emailHelp" name="running_text" required>{{ $display->running_text }}</textarea>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 

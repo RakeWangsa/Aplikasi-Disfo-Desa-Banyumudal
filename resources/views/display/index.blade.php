@@ -6,7 +6,7 @@
     <title>Disfo Desa Banyumudal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   </head>
-  <body background="{{asset('admintemplate/img/balai-desa-banyumudal.jpeg')}}" style="background-size: cover;">
+  <body background="{{asset('admintemplate/img/balai-desa.jpeg')}}" style="background-size: cover;">
    <style>
       .custom-marquee {
         font-size: 25px; /* Sesuaikan ukuran teks sesuai keinginan Anda */
@@ -39,7 +39,7 @@
   }
     </style>
    <div class="row">
-      <div class="col bg-dark d-flex align-items-center">
+      <div class="col d-flex align-items-center" style="background:linear-gradient(to right, rgb(37, 37, 37), rgb(65, 65, 65));">
           <div class="col-1">
           <img src="{{asset('admintemplate/img/logopemalang.png')}}" style="width:100px;float:right" class="mr-2">
         </div>
@@ -61,15 +61,11 @@
   <div class="card text-dark border border-dark border-3">
     <div id="carouselAgendaDesa" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
+        @if($jumlahAgenda==0)
         <div class="carousel-item galeri-desa active">
-          <img src="{{asset('admintemplate/img/gotongroyong.jpg')}}" class="d-block w-100 card-img" alt="slide1">
+          <img src="{{asset('admintemplate/img/tidakAdaAgendaDesa.png')}}" class="d-block w-100 card-img" alt="slide1">
         </div>
-        <div class="carousel-item galeri-desa">
-          <img src="{{asset('admintemplate/img/posyandu.jpg')}}" class="d-block w-100 card-img" alt="slide2">
-        </div>
-        <div class="carousel-item galeri-desa">
-          <img src="{{asset('admintemplate/img/senam.jpg')}}" class="d-block w-100 card-img" alt="slide3">
-        </div>
+
         <div class="card-img-overlay">
           <h5 class="card-title text-dark text-center">
             <span class="highlight-text d-inline-block align-middle" style="background-color: rgba(255, 255, 255, 0.5); border: 1px solid rgb(0, 0, 0); padding: 10px;">
@@ -82,7 +78,7 @@
 
                 <div class="row" style="border-radius: 10px; border: 1px solid #000000;background-color: rgba(255, 255, 255, 0.6);">
                   <div class="col">
-                    <p class="card-text text-center text-dark" style="height:30px;font-size:15px;margin-top:2px;"><strong id="waktu"></strong></p>
+                    <p class="card-text text-center text-dark" style="height:30px;font-size:15px;margin-top:2px;"><strong id="waktu">-</strong></p>
                   </div>
                 </div>
                 
@@ -100,12 +96,12 @@
                   <div class="card-body"> --}}
                     <div class="row" style="border-radius: 10px 10px 0 0;border: 1px solid #000000;background-color: rgba(255, 23, 23, 0.6);">
                       <div class="col">
-                        <p class="card-text text-center text-light" style="height:30px;"><strong id="bulanTahun"></strong></p>
+                        <p class="card-text text-center text-light" style="height:30px;"><strong id="bulanTahun">-</strong></p>
                       </div>
                     </div>
                     <div class="row" style="border-radius: 0 0 10px 10px;border: 1px solid #000000;border-top:none;background-color: rgba(255, 255, 255, 0.6);">
                       <div class="col">
-                        <p class="card-text text-dark text-center" style="height:50px;padding-top:10px"><strong id="tanggal"></strong></p>
+                        <p class="card-text text-dark text-center" style="height:50px;padding-top:10px"><strong id="tanggal">-</strong></p>
                       </div>
                     </div>
                   {{-- </div>
@@ -119,7 +115,7 @@
                   <div class="card-body"> --}}
                     <div class="row">
                       <div class="col" style="border-radius: 10px 10px 0 0;background-color: rgba(180, 180, 180, 0.6);border: 1px solid #000000;">
-                        <p class="card-text text-dark text-left" style="height:50px;padding-top:10px"><strong id="agenda"></strong></p>
+                        <p class="card-text text-dark text-left" style="height:50px;padding-top:10px"><strong id="nama_agenda">-</strong></p>
                       </div>
                     </div>
                     <div class="row">
@@ -128,7 +124,7 @@
                         <img src="{{asset('admintemplate/img/logo-lokasi.png')}}" style="width:20px;height:auto;">
                       </div>
                       <div class="col-11" style="background-color: rgba(255, 255, 255, 0.6);border-radius: 0 0 10px 0;border: 1px solid #000000;border-top: none;">
-                        <p class="card-text text-dark text-left" style="height:30px;padding-top:2px"><strong id="lokasi"></strong></p>
+                        <p class="card-text text-dark text-left" style="height:30px;padding-top:2px"><strong id="lokasi">-</strong></p>
                       </div>
                     </div>
                   {{-- </div>
@@ -139,6 +135,82 @@
 
           </div>
         </div>
+        @else
+        @foreach($agenda as $data)
+          <div class="carousel-item galeri-desa @if($loop->first) active @endif">
+            <img src="{{ asset('admintemplate/img/' . $data->foto) }}" class="d-block w-100 card-img" alt="slide1">
+          </div>
+        @endforeach
+        <div class="card-img-overlay">
+          <h5 class="card-title text-dark text-center">
+            <span class="highlight-text d-inline-block align-middle" style="background-color: rgba(255, 255, 255, 0.5); border: 1px solid rgb(0, 0, 0); padding: 10px;">
+              <strong>AGENDA DESA</strong>
+            </span>
+          </h5>
+          <div class="row" style="margin-top:145px;margin-bottom:-20px">
+            <div class="col-3">
+              <div class="container px-4">
+
+                <div class="row" style="border-radius: 10px; border: 1px solid #000000;background-color: rgba(255, 255, 255, 0.6);">
+                  <div class="col">
+                    <p class="card-text text-center text-dark" style="height:30px;font-size:15px;margin-top:2px;"><strong id="waktu">{{ $agenda[0]->waktu }}</strong></p>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            <div class="col-9">
+
+            </div>
+          </div>
+          <div class="row">
+
+            <div class="col-3">
+              <div class="container p-4">
+                {{-- <div class="card">
+                  <div class="card-body"> --}}
+                    <div class="row" style="border-radius: 10px 10px 0 0;border: 1px solid #000000;background-color: rgba(255, 23, 23, 0.6);">
+                      <div class="col">
+                        <p class="card-text text-center text-light" style="height:30px;"><strong id="bulanTahun">{{ $agenda[0]->bulan_tahun }}</strong></p>
+                      </div>
+                    </div>
+                    <div class="row" style="border-radius: 0 0 10px 10px;border: 1px solid #000000;border-top:none;background-color: rgba(255, 255, 255, 0.6);">
+                      <div class="col">
+                        <p class="card-text text-dark text-center" style="height:50px;padding-top:10px"><strong id="tanggal">{{ $agenda[0]->tanggal }}</strong></p>
+                      </div>
+                    </div>
+                  {{-- </div>
+                </div> --}}
+                
+            </div>
+            </div>
+            <div class="col-9">
+              <div class="container p-4">
+                {{-- <div class="card">
+                  <div class="card-body"> --}}
+                    <div class="row">
+                      <div class="col" style="border-radius: 10px 10px 0 0;background-color: rgba(180, 180, 180, 0.6);border: 1px solid #000000;">
+                        <p class="card-text text-dark text-left" style="height:50px;padding-top:10px"><strong id="nama_agenda">{{ $agenda[0]->nama_agenda }}</strong></p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-1" style="border-radius: 0 0 0 10px;border: 1px solid #000000;border-top: none;border-right: none;background-color: rgba(255, 171, 171, 0.5);">
+                        {{-- <p class="card-text text-dark text-center" style="height:30px;padding-top:2px"><strong>B</strong></p> --}}
+                        <img src="{{asset('admintemplate/img/logo-lokasi.png')}}" style="width:20px;height:auto;">
+                      </div>
+                      <div class="col-11" style="background-color: rgba(255, 255, 255, 0.6);border-radius: 0 0 10px 0;border: 1px solid #000000;border-top: none;">
+                        <p class="card-text text-dark text-left" style="height:30px;padding-top:2px"><strong id="lokasi">{{ $agenda[0]->lokasi }}</strong></p>
+                      </div>
+                    </div>
+                  {{-- </div>
+                </div> --}}
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+        @endif
       </div>
     </div>
   </div>
@@ -449,8 +521,10 @@
   </script> --}}
 
 <script>
+  var agendaData = @json($agenda);
   // Mendeteksi perubahan slide pada carousel setelah selesai transisi
   $('#carouselAgendaDesa').on('slid.bs.carousel', function (e) {
+      var nama_agenda;
       var waktu;
       var bulanTahun;
       var tanggal;
@@ -458,37 +532,22 @@
       var lokasi;
 
 
-      // Memperbarui teks berdasarkan slide yang aktif
-      switch (e.to) {
-          case 0:
-              waktu = '08.00-10.00';
-              bulanTahun = 'Jan 2024';
-              tanggal = '20';
-              agenda = 'Gotong royong membersihkan sungai';
-              lokasi = 'Sungai Banyumudal';
-              break;
-          case 1:
-              waktu = '09.00-12.00';
-              bulanTahun = 'Jan 2024';
-              tanggal = '23';
-              agenda = 'Posyandu balita';
-              lokasi = 'Balai Desa';
-              break;
-          case 2:
-              waktu = '16.00-17.00';
-              bulanTahun = 'Jan 2024';
-              tanggal = '25';
-              agenda = 'Senam ibu-ibu';
-              lokasi = 'MI Dewi Masyithoh';
-              break;
-      }
+      if (agendaData[e.to]) {
+            nama_agenda = agendaData[e.to].nama_agenda;
+            waktu = agendaData[e.to].waktu;
+            bulan_tahun = agendaData[e.to].bulan_tahun;
+            tanggal = agendaData[e.to].tanggal;
+            agenda = agendaData[e.to].agenda;
+            lokasi = agendaData[e.to].lokasi;
+        }
 
       // Memperbarui teks pada elemen dengan id 'namaDetail' dan 'jabatanDetail'
-      $('#waktu').text(waktu);
-      $('#bulanTahun').text(bulanTahun);
-      $('#tanggal').text(tanggal);
-      $('#agenda').text(agenda);
-      $('#lokasi').text(lokasi);
+        $('#nama_agenda').text(nama_agenda || '');
+        $('#waktu').text(waktu || '');
+        $('#bulanTahun').text(bulan_tahun || '');
+        $('#tanggal').text(tanggal || '');
+        $('#agenda').text(agenda || '');
+        $('#lokasi').text(lokasi || '');
   });
 </script>
 
