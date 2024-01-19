@@ -6,7 +6,7 @@
     <title>Disfo Desa Banyumudal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   </head>
-  <body background="{{asset('admintemplate/img/balai-desa.jpeg')}}" style="background-size: cover;">
+  <body background="{{ asset('background/'.$background->foto) }}" style="background-size: cover;">
    <style>
       .custom-marquee {
         font-size: 25px; /* Sesuaikan ukuran teks sesuai keinginan Anda */

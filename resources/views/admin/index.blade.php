@@ -73,6 +73,13 @@
       <input type="text" class="form-control" style="border: 1px solid #000000;" value="{{ $display->sub_header }}" name="sub_header" id="sub_header" required>
     </div>
     <div class="mb-4">
+      <div class="row">
+        <p for="fotoBackground" class="form-label"><strong>Background :</strong></p>
+      </div>
+        <img src="{{ asset('background/'.$background->foto) }}" class="mb-4" style="width:150px;height:auto">
+        <input type="file" class="form-control" style="border: 1px solid #000000;" name="fotoBackground" id="fotoBackground" accept="image/*">
+      </div>
+    <div class="mb-4">
       <p class="form-label"><strong>Agenda Desa :</strong></p>
       <ul class="list-group" style="border: 1px solid #000000;">
         @if($jumlahAgenda==0)

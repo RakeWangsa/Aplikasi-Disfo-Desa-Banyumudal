@@ -19,6 +19,10 @@ class DisplayController extends Controller
         ->where('id',1)
         ->select('*')
         ->first();
+        $background = DB::table('background')
+        ->where('id','1')
+        ->select('*')
+        ->first();
         $jumlahAgenda=count($agenda);
         return view('display.index', [
             'title' => 'Display',
@@ -26,6 +30,7 @@ class DisplayController extends Controller
             'iklan' => $iklan,
             'agenda' => $agenda,  
             'jumlahAgenda' => $jumlahAgenda,  
+            'background' => $background
         ]);
     }
 }

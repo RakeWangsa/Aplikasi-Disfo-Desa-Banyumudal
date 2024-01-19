@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Agenda;
+use App\Models\Background;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Display;
@@ -23,13 +24,18 @@ class AdminController extends Controller
         $agenda = DB::table('agenda')
         ->select('*')
         ->get();
+        $background = DB::table('background')
+        ->where('id','1')
+        ->select('foto')
+        ->first();
         $jumlahAgenda=count($agenda);
         return view('admin.index', [
             'title' => 'Admin',
             'display' => $display,
             'iklan' => $iklan, 
             'agenda' => $agenda,
-            'jumlahAgenda' => $jumlahAgenda
+            'jumlahAgenda' => $jumlahAgenda,
+            'background' => $background
         ]);
     }
     public function updateDisplay(Request $request)
@@ -45,6 +51,23 @@ class AdminController extends Controller
                 Iklan::create(['foto' => $imageName]);
             }
 
+        }
+        if ($request->hasFile('fotoBackground')) {
+            $imageName = DB::table('background')
+            ->where('id','1')
+            ->select('foto')
+            ->first();
+            $imagePath = public_path('background') . '/' . $imageName->foto;
+            if (File::exists($imagePath)) {
+                File::delete($imagePath);
+            }
+            $image = $request->file('fotoBackground');
+                $imageName = $image->getClientOriginalName();
+                $image->move(public_path('background'), $imageName);
+                $Background = Background::find(1);
+                $Background->update([
+                    'foto' => $imageName,
+                ]);
         }
         $display = Display::find(1);
         $display->update([
