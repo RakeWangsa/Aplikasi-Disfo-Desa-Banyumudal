@@ -75,49 +75,51 @@
     <div class="mb-4">
       <p class="form-label"><strong>Agenda Desa :</strong></p>
       <ul class="list-group" style="border: 1px solid #000000;">
+        @if($jumlahAgenda==0)
+          <li class="list-group-item">Tidak ada agenda</li>
+        @endif
         @foreach($agenda as $row)
+
           <li class="list-group-item" data-toggle="modal" data-target="#agenda{{ $row->id }}">{{ $row->nama_agenda }}</li>
-        @endforeach
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Gotong Royong Membersihkan Sungai</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                            </button>
-                          </div>
-                          <div class="modal-body">
+
+                              <!-- Modal -->
+                              <div class="modal fade" id="agenda{{ $row->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLabel">{{ $row->nama_agenda }}</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+                                    <div class="mb-4">
+                                      <label for="linkYoutube" class="form-label"><strong>Lokasi :</strong></label>
+                                      <input type="text" class="form-control" style="border: 1px solid #000000;" value="{{ $row->lokasi }}" readonly>
+                                  </div>
+                                  <div class="mb-4">
+                                    <label for="linkYoutube" class="form-label"><strong>Waktu :</strong></label>
+                                    <input type="text" class="form-control" style="border: 1px solid #000000;" value="{{ $row->waktu }}" readonly>
+                                </div>
+                                <div class="mb-4">
+                                  <label for="linkYoutube" class="form-label"><strong>Tanggal :</strong></label>
+                                  <input type="text" class="form-control" style="border: 1px solid #000000;" value="{{ $row->tanggal }}" readonly>
+                              </div>
+                              <div class="mb-4">
+                                <label for="linkYoutube" class="form-label"><strong>Bulan - Tahun :</strong></label>
+                                <input type="text" class="form-control" style="border: 1px solid #000000;" value="{{ $row->bulan_tahun }}" readonly>
+                            </div>
                             <div class="mb-4">
-                              <label for="linkYoutube" class="form-label"><strong>Agenda :</strong></label>
-                              <input type="text" class="form-control" style="border: 1px solid #000000;" value="{{ $display->sub_header }}" readonly>
+                              <p for="linkYoutube" class="form-label"><strong>Foto :</strong></p>
+                              <img src="{{ asset('agenda/'.$row->foto) }}" style="width:200px;height:auto">
                           </div>
-                          <div class="mb-4">
-                            <label for="linkYoutube" class="form-label"><strong>Lokasi :</strong></label>
-                            <input type="text" class="form-control" style="border: 1px solid #000000;" value="{{ $display->sub_header }}" readonly>
-                        </div>
-                        <div class="mb-4">
-                          <label for="linkYoutube" class="form-label"><strong>Waktu :</strong></label>
-                          <input type="text" class="form-control" style="border: 1px solid #000000;" value="{{ $display->sub_header }}" readonly>
-                      </div>
-                      <div class="mb-4">
-                        <label for="linkYoutube" class="form-label"><strong>Tanggal :</strong></label>
-                        <input type="text" class="form-control" style="border: 1px solid #000000;" value="{{ $display->sub_header }}" readonly>
-                    </div>
-                    <div class="mb-4">
-                      <label for="linkYoutube" class="form-label"><strong>Bulan - Tahun :</strong></label>
-                      <input type="text" class="form-control" style="border: 1px solid #000000;" value="{{ $display->sub_header }}" readonly>
-                  </div>
-                  <div class="mb-4">
-                    <p for="linkYoutube" class="form-label"><strong>Foto :</strong></p>
-                    <img src="{{ asset('iklan/iklankfc.jpeg') }}" style="width:200px;height:auto">
-                </div>
-                  <a class="btn btn-danger" href="/deleteIklan">Hapus</a>
-                          </div>   
-                        </div>
-                      </div>
-                    </div>
+                            <a class="btn btn-danger" href="/deleteAgenda/{{ $row->id }}">Hapus</a>
+                                    </div>   
+                                  </div>
+                                </div>
+                              </div>
+        @endforeach
+
       </ul>
 
 

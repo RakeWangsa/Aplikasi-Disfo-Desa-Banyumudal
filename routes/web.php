@@ -25,3 +25,4 @@ Route::get('/admin', [AdminController::class, 'index'])->name('index')->middlewa
 route::post('/updateDisplay', [AdminController::class, 'updateDisplay'])->name('updateDisplay')->middleware('guest');
 route::get('/deleteIklan/{id}', [AdminController::class, 'deleteIklan'])->name('deleteIklan')->middleware('guest');
 route::post('/addAgenda', [AdminController::class, 'addAgenda'])->name('addAgenda')->middleware('guest');
+route::get('/deleteAgenda/{id}', [AdminController::class, 'deleteAgenda'])->name('deleteAgenda')->middleware('guest');

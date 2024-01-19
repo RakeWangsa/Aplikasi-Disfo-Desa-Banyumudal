@@ -15,7 +15,7 @@ class Agenda extends Model
         'lokasi',
         'waktu',
         'tanggal',
-        'bulan-tahun',
+        'bulan_tahun',
         'foto',
     ];
 }

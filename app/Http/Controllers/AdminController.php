@@ -23,11 +23,13 @@ class AdminController extends Controller
         $agenda = DB::table('agenda')
         ->select('*')
         ->get();
+        $jumlahAgenda=count($agenda);
         return view('admin.index', [
             'title' => 'Admin',
             'display' => $display,
             'iklan' => $iklan, 
-            'agenda' => $agenda
+            'agenda' => $agenda,
+            'jumlahAgenda' => $jumlahAgenda
         ]);
     }
     public function updateDisplay(Request $request)
@@ -102,10 +104,25 @@ class AdminController extends Controller
             'lokasi' => $request->lokasi,
             'waktu' => $request->waktu,
             'tanggal' => $request->tanggal,
-            'bulan-tahun' => $request->bulan_tahun,
+            'bulan_tahun' => $request->bulan_tahun,
             'foto' => $imageName,
         ]);
     
         return redirect('/admin');
+    }
+
+    public function deleteAgenda($id)
+    {
+        $imageName = DB::table('agenda')
+        ->where('id',$id)
+        ->select('foto')
+        ->first();
+        $imagePath = public_path('agenda') . '/' . $imageName->foto;
+        if (File::exists($imagePath)) {
+            File::delete($imagePath);
+        }
+
+        Agenda::find($id)->delete();
+        return redirect()->back()->with('success', 'Agenda berhasil dihapus');
     }
 }
