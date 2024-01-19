@@ -73,37 +73,62 @@
       <input type="text" class="form-control" style="border: 1px solid #000000;" value="{{ $display->sub_header }}" name="sub_header" id="sub_header" aria-describedby="emailHelp">
     </div>
     <div class="mb-4">
-      <label for="InputTitle4" class="form-label"><strong>Agenda Desa :</strong></label>
-      <input type="file" class="form-control" style="border: 1px solid #000000;" name="profileImage" id="fileInput" accept="image/*">
-    </div>
-    <div class="mb-4">
+      <p class="form-label"><strong>Agenda Desa :</strong></p>
       <ul class="list-group" style="border: 1px solid #000000;">
-        <li class="list-group-item" data-toggle="modal" data-target="#exampleModalss">An item</li>
-        <li class="list-group-item">A second item</li>
-        <li class="list-group-item">A third item</li>
-        <li class="list-group-item">A fourth item</li>
-        <li class="list-group-item">And a fifth one</li>
-      </ul>
+        @foreach($agenda as $row)
+          <li class="list-group-item" data-toggle="modal" data-target="#agenda{{ $row->id }}">{{ $row->nama_agenda }}</li>
+        @endforeach
                     <!-- Modal -->
-                    <div class="modal fade" id="exampleModalss" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog" role="document">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel"></h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Gotong Royong Membersihkan Sungai</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                               <span aria-hidden="true">&times;</span>
                             </button>
                           </div>
                           <div class="modal-body">
-                            <div class="row mb-4">
-                            <img src="" style="width:500px;">
+                            <div class="mb-4">
+                              <label for="linkYoutube" class="form-label"><strong>Agenda :</strong></label>
+                              <input type="text" class="form-control" style="border: 1px solid #000000;" value="{{ $display->sub_header }}" readonly>
                           </div>
-                            <a class="btn btn-danger" href="/deleteIklan">Hapus</a>
+                          <div class="mb-4">
+                            <label for="linkYoutube" class="form-label"><strong>Lokasi :</strong></label>
+                            <input type="text" class="form-control" style="border: 1px solid #000000;" value="{{ $display->sub_header }}" readonly>
+                        </div>
+                        <div class="mb-4">
+                          <label for="linkYoutube" class="form-label"><strong>Waktu :</strong></label>
+                          <input type="text" class="form-control" style="border: 1px solid #000000;" value="{{ $display->sub_header }}" readonly>
+                      </div>
+                      <div class="mb-4">
+                        <label for="linkYoutube" class="form-label"><strong>Tanggal :</strong></label>
+                        <input type="text" class="form-control" style="border: 1px solid #000000;" value="{{ $display->sub_header }}" readonly>
+                    </div>
+                    <div class="mb-4">
+                      <label for="linkYoutube" class="form-label"><strong>Bulan - Tahun :</strong></label>
+                      <input type="text" class="form-control" style="border: 1px solid #000000;" value="{{ $display->sub_header }}" readonly>
+                  </div>
+                  <div class="mb-4">
+                    <p for="linkYoutube" class="form-label"><strong>Foto :</strong></p>
+                    <img src="{{ asset('iklan/iklankfc.jpeg') }}" style="width:200px;height:auto">
+                </div>
+                  <a class="btn btn-danger" href="/deleteIklan">Hapus</a>
                           </div>   
                         </div>
                       </div>
                     </div>
-    </div>
+      </ul>
+
+
+
+    
+    
+    <a class="btn btn-secondary mt-4" data-toggle="modal" data-target="#tambahAgenda">Tambah Agenda</a>
+    
+
+                                            
+                                      </div>
     
     <div class="mb-4">
       <label for="InputTitle1" class="form-label"><strong>Title 5 :</strong></label>
@@ -156,6 +181,50 @@
 </div>
 </div>
 </form>
+
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="tambahAgenda" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                              <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                  <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Tambah Agenda</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                      <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                    <form action="{{ route('addAgenda') }}" method="post" enctype="multipart/form-data">
+                                                      @csrf
+                                                    <div class="mb-4">
+                                                      <label for="linkYoutube" class="form-label"><strong>Agenda :</strong></label>
+                                                      <input type="text" class="form-control" style="border: 1px solid #000000;" name="nama_agenda" required>
+                                                  </div>
+                                                  <div class="mb-4">
+                                                    <label for="linkYoutube" class="form-label"><strong>Lokasi :</strong></label>
+                                                    <input type="text" class="form-control" style="border: 1px solid #000000;" name="lokasi" required>
+                                                </div>
+                                                <div class="mb-4">
+                                                  <label for="linkYoutube" class="form-label"><strong>Waktu :</strong></label>
+                                                  <input type="text" class="form-control" style="border: 1px solid #000000;" name="waktu" required>
+                                              </div>
+                                              <div class="mb-4">
+                                                <label for="linkYoutube" class="form-label"><strong>Tanggal :</strong></label>
+                                                <input type="text" class="form-control" style="border: 1px solid #000000;" name="tanggal" required>
+                                            </div>
+                                            <div class="mb-4">
+                                              <label for="linkYoutube" class="form-label"><strong>Bulan - Tahun :</strong></label>
+                                              <input type="text" class="form-control" style="border: 1px solid #000000;" name="bulan_tahun" required>
+                                          </div>
+                                          <div class="mb-4">
+                                            <label for="linkYoutube" class="form-label"><strong>Foto :</strong></label>
+                                            <input type="file" class="form-control" style="border: 1px solid #000000;" name="fotoAgenda" id="fileInput" accept="image/*" required>
+                                        </div>
+                                          <button class="btn btn-primary" type="submit">Submit</button>
+                                                    </form>
+                                                  </div>     
+                                                </div>
+                                              </div>
+                                            </div>
 
 {{-- </div> --}}
 <script>

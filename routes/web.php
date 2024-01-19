@@ -24,3 +24,4 @@ Route::get('/display', [DisplayController::class, 'index'])->name('index')->midd
 Route::get('/admin', [AdminController::class, 'index'])->name('index')->middleware('guest');
 route::post('/updateDisplay', [AdminController::class, 'updateDisplay'])->name('updateDisplay')->middleware('guest');
 route::get('/deleteIklan/{id}', [AdminController::class, 'deleteIklan'])->name('deleteIklan')->middleware('guest');
+route::post('/addAgenda', [AdminController::class, 'addAgenda'])->name('addAgenda')->middleware('guest');
