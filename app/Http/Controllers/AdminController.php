@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\File;
 
 class AdminController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {        
         $display = DB::table('display')
         ->where('id',1)
@@ -40,13 +40,6 @@ class AdminController extends Controller
     }
     public function updateDisplay(Request $request)
     {
-        if($request->input('flexRadioDefault')!=Null){
-            $tampilan = Display::find(1);
-            $tampilan->update([
-                'tampilan' => $request->input('flexRadioDefault'),
-            ]);
-        }
-
         if ($request->hasFile('profileImage')) {
             $images = $request->file('profileImage');
 
@@ -77,10 +70,15 @@ class AdminController extends Controller
         }
         $display = Display::find(1);
         $display->update([
+            'tampilan' => $request->input('flexRadioDefault'),
             'header' => $request->header,
             'sub_header' => $request->sub_header,
             'title1' => $request->title1,
             'text1' => $request->text1,
+            'title1a' => $request->title1a,
+            'text1a' => $request->text1a,
+            'title1b' => $request->title1b,
+            'text1b' => $request->text1b,
             'title2' => $request->title2,
             'text2' => $request->text2,
             'title3' => $request->title3,

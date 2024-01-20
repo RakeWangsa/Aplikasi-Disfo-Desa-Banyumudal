@@ -242,18 +242,18 @@
             <div class="card-body">
               <div class="row" style="border-bottom: 2px solid #000000;padding-bottom: 5px;">
               <div class="col">
-                <h5 class="card-title mb-0"><strong>Waktu</strong></h5>
+                <h5 class="card-title mb-0"><strong>{{ $display->title1a }}</strong></h5>
               </div>
               <div class="col">
-                <h5 class="card-title mb-0"><strong>Agenda</strong></h5>
+                <h5 class="card-title mb-0"><strong>{{ $display->title1b }}</strong></h5>
               </div>
             </div>
             <div class="row">
               <div class="col">
-                <p class="card-text my-0"><strong>Tes</strong></p>
+                <p class="card-text my-0"><strong>{!! nl2br($display->text1a) !!}</strong></p>
               </div>
               <div class="col">
-                <p class="card-text my-0"><strong>Tes</strong></p>
+                <p class="card-text my-0"><strong>{!! nl2br($display->text1b) !!}</strong></p>
               </div>
             </div>
             </div>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Disfo Desa Banyumudal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   </head>
   <body style="background-size: cover;background: linear-gradient(to right, rgb(156, 156, 156), rgb(225, 225, 225));">
 
@@ -13,13 +14,17 @@
           <div class="col-1">
           <img src="{{asset('admintemplate/img/logopemalang.png')}}" style="width:100px;float:right" class="mr-2">
         </div>
-        <div class="col-9">
+        <div class="col-10">
           <h3 class="mb-0 text-light">{{ $display->header }}</h3>
           <h6 class="mb-0 text-light">{{ $display->sub_header }}</h6>
         </div>
         <div class="col-2" style="padding-right:2rem">
-          <h6 class="mb-0 text-light text-end" id="dateDisplay"></h6>
-          <h5 class="mb-0 text-light text-end" id="timeDisplay"></h5>
+          <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <button type="submit" class="btn btn-secondary text-end">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></button>
+        </form>
+        
+
         </div>
         
       </div>
@@ -48,29 +53,50 @@
         </label>
       </div>
     </div>
-    <div class="mb-4">
+
+    <div class="mb-4" @if($display->tampilan=="Tampilan 2") style="display:none" @endif>
       <label for="InputTitle1" class="form-label"><strong>Title 1 :</strong></label>
-      <input type="text" class="form-control mb-1" id="InputTitle1" aria-describedby="emailHelp" style="border: 1px solid #000000;" name="title1" value="{{ $display->title1 }}" required>
+      <input type="text" class="form-control mb-1" id="InputTitle1" style="border: 1px solid #000000;" name="title1" value="{{ $display->title1 }}" required>
       <label for="InputText1" class="form-label"><strong>Text 1 :</strong></label>
-      <textarea class="form-control" style="border: 1px solid #000000;height: 150px;" id="InputText1" aria-describedby="emailHelp" name="text1" required>{{ $display->text1 }}</textarea>
+      <textarea class="form-control" style="border: 1px solid #000000;height: 150px;" id="InputText1" name="text1" required>{{ $display->text1 }}</textarea>
     </div>
-    <div class="mb-4">
+    <div class="mb-4" @if($display->tampilan=="Tampilan 1") style="display:none" @endif>
+      <label for="InputTitle1" class="form-label"><strong>Title 1 :</strong></label>
+      <div class="row">
+        <div class="col">
+          <input type="text" class="form-control mb-1" id="InputTitle1a" style="border: 1px solid #000000;" name="title1a" value="{{ $display->title1a }}" required>
+        </div>
+        <div class="col">
+          <input type="text" class="form-control mb-1" id="InputTitle1b" style="border: 1px solid #000000;" name="title1b" value="{{ $display->title1b }}" required>
+        </div>
+      </div>
+      <label for="InputText1" class="form-label"><strong>Text 1 :</strong></label>
+      <div class="row">
+        <div class="col">
+          <textarea class="form-control" style="border: 1px solid #000000;height: 150px;" id="InputText1" name="text1a" required>{{ $display->text1a }}</textarea>
+        </div>
+        <div class="col">
+          <textarea class="form-control" style="border: 1px solid #000000;height: 150px;" id="InputText1" name="text1b" required>{{ $display->text1b }}</textarea>
+        </div>
+      </div>
+    </div>
+    <div class="mb-4" @if($display->tampilan=="Tampilan 2") style="display:none" @endif>
       <label for="InputTitle1" class="form-label"><strong>Title 2 :</strong></label>
-      <input type="text" class="form-control mb-1" id="InputTitle1" aria-describedby="emailHelp" style="border: 1px solid #000000;" name="title2" value="{{ $display->title2 }}" required>
+      <input type="text" class="form-control mb-1" id="InputTitle1" style="border: 1px solid #000000;" name="title2" value="{{ $display->title2 }}" required>
       <label for="InputText1" class="form-label"><strong>Text 2 :</strong></label>
-      <textarea class="form-control" style="border: 1px solid #000000;height: 150px;" id="InputText1" aria-describedby="emailHelp" name="text2" required>{{ $display->text2 }}</textarea>
-    </div>    
+      <textarea class="form-control" style="border: 1px solid #000000;height: 150px;" id="InputText1" name="text2" required>{{ $display->text2 }}</textarea>
+    </div> 
     <div class="mb-4">
       <label for="InputTitle1" class="form-label"><strong>Title 3 :</strong></label>
-      <input type="text" class="form-control mb-1" id="InputTitle1" aria-describedby="emailHelp" style="border: 1px solid #000000;" name="title3" value="{{ $display->title3 }}" required>
+      <input type="text" class="form-control mb-1" id="InputTitle1" style="border: 1px solid #000000;" name="title3" value="{{ $display->title3 }}" required>
       <label for="InputText1" class="form-label"><strong>Text 3 :</strong></label>
-      <textarea class="form-control" style="border: 1px solid #000000;height: 150px;" id="InputText1" aria-describedby="emailHelp" name="text3" required>{{ $display->text3 }}</textarea>
+      <textarea class="form-control" style="border: 1px solid #000000;height: 150px;" id="InputText1" name="text3" required>{{ $display->text3 }}</textarea>
     </div>
     <div class="mb-4">
       <label for="InputTitle1" class="form-label"><strong>Title 4 :</strong></label>
-      <input type="text" class="form-control mb-1" id="InputTitle1" aria-describedby="emailHelp" style="border: 1px solid #000000;" name="title4" value="{{ $display->title4 }}" required>
+      <input type="text" class="form-control mb-1" id="InputTitle1" style="border: 1px solid #000000;" name="title4" value="{{ $display->title4 }}" required>
       <label for="InputText1" class="form-label"><strong>Text 4 :</strong></label>
-      <textarea class="form-control" style="border: 1px solid #000000;height: 150px;" id="InputText1" aria-describedby="emailHelp" name="text4" required>{{ $display->text4 }}</textarea>
+      <textarea class="form-control" style="border: 1px solid #000000;height: 150px;" id="InputText1" name="text4" required>{{ $display->text4 }}</textarea>
     </div>
 
 </div>
@@ -156,7 +182,7 @@
     
     <div class="mb-4">
       <label for="InputTitle1" class="form-label"><strong>Title 5 :</strong></label>
-      <input type="text" class="form-control mb-1" id="InputTitle1" aria-describedby="emailHelp" style="border: 1px solid #000000;" name="title5" value="{{ $display->title5 }}" required>
+      <input type="text" class="form-control mb-1" id="InputTitle1" style="border: 1px solid #000000;" name="title5" value="{{ $display->title5 }}" required>
     </div>
     <div class="mb-4">
       <div class="row mb-4">
@@ -193,11 +219,11 @@
 
     <div class="mb-4">
       <label for="linkYoutube" class="form-label"><strong>Link Youtube :</strong></label>
-      <input type="text" class="form-control" style="border: 1px solid #000000;" name="linkYoutube" id="linkYoutube" value="{{ $display->link_youtube }}" aria-describedby="emailHelp" required>
+      <input type="text" class="form-control" style="border: 1px solid #000000;" name="linkYoutube" id="linkYoutube" value="{{ $display->link_youtube }}" required>
     </div>
     <div class="mb-4">
       <label for="InputText1" class="form-label"><strong>Running Text :</strong></label>
-      <textarea class="form-control" style="border: 1px solid #000000;" id="InputText1" aria-describedby="emailHelp" name="running_text" required>{{ $display->running_text }}</textarea>
+      <textarea class="form-control" style="border: 1px solid #000000;" id="InputText1" name="running_text" required>{{ $display->running_text }}</textarea>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 
@@ -251,30 +277,7 @@
                                             </div>
 
 {{-- </div> --}}
-<script>
-  function updateClock() {
-    // Mendapatkan waktu saat ini
-    var now = new Date();
-  
-    // Mendapatkan elemen-elemen HTML yang akan diubah
-    var dateDisplay = document.getElementById('dateDisplay');
-    var timeDisplay = document.getElementById('timeDisplay');
-  
-    // Mendapatkan informasi tanggal dan waktu
-    var dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    var timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false, timeZoneName: 'short' };
-  
-    // Memperbarui teks pada elemen HTML
-    dateDisplay.textContent = now.toLocaleDateString('id-ID', dateOptions);
-    timeDisplay.textContent = now.toLocaleTimeString('id-ID', timeOptions).replace(/\./g, ' : ');
-  }
-  
-  // Memanggil fungsi updateClock setiap detik (1000 milidetik)
-  setInterval(updateClock, 1000);
-  
-  // Memanggil fungsi updateClock pada saat halaman pertama kali dimuat
-  updateClock();
-</script>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

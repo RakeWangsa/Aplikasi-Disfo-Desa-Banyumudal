@@ -13,6 +13,10 @@ class Display extends Model
     protected $fillable = [
         'title1',
         'text1',
+        'title1a',
+        'text1a',
+        'title1b',
+        'text1b',
         'title2',
         'text2',
         'title3',

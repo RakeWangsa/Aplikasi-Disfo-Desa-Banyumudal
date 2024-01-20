@@ -31,7 +31,7 @@
                               <div class="pt-4 pb-2">
                                  <h5 class="card-title text-center pb-0 fs-2 text-primary">LOGIN</h5>
                               </div>
-                              <form action="/login" method="post">
+                              <form action="{{ route('checkLogin') }}" method="post">
                                  @csrf
                                  <div class="form-floating">
                                     <input type="email" name="email" class="form-control
