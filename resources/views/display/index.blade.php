@@ -242,8 +242,19 @@
             <div class="card-body">
                 <h5 class="card-title mb-0" style="border-bottom: 2px solid #000000;padding-bottom: 5px;"><strong>{{ $display->title1 }}</strong></h5>
                 <div class="kolom" id="scrollingDiv1">
-                <p class="card-text my-0"><br></p>
+                  <p class="card-text my-0"><br></p>
+                  <p class="card-text my-0"><br></p>
+                  <p class="card-text my-0"><br></p>
+                  <p class="card-text my-0"><br></p>
+                  <p class="card-text my-0"><br></p>
+                  <p class="card-text my-0"><br></p>
                 <p class="card-text my-0"><strong>{!! nl2br($display->text1) !!}</strong></p>
+                <p class="card-text my-0"><br></p>
+                <p class="card-text my-0"><br></p>
+                <p class="card-text my-0"><br></p>
+                <p class="card-text my-0"><br></p>
+                <p class="card-text my-0"><br></p>
+                <p class="card-text my-0"><br></p>
               </div>
             </div>
         </div>
@@ -257,7 +268,18 @@
               <h5 class="card-title mb-0" style="border-bottom: 2px solid #000000;padding-bottom: 5px;"><strong>{{ $display->title2 }}</strong></h5>
               <div class="kolom" style="" id="scrollingDiv2">
                 <p class="card-text my-0"><br></p>
+                <p class="card-text my-0"><br></p>
+                <p class="card-text my-0"><br></p>
+                <p class="card-text my-0"><br></p>
+                <p class="card-text my-0"><br></p>
+                <p class="card-text my-0"><br></p>
                 <p class="card-text my-0"><strong>{!! nl2br($display->text2) !!}</strong></p>
+                <p class="card-text my-0"><br></p>
+                <p class="card-text my-0"><br></p>
+                <p class="card-text my-0"><br></p>
+                <p class="card-text my-0"><br></p>
+                <p class="card-text my-0"><br></p>
+                <p class="card-text my-0"><br></p>
             </div>
           </div>
       </div>
@@ -275,8 +297,19 @@
         <div class="card-body">
             <h5 class="card-title mb-0" style="border-bottom: 2px solid #000000;padding-bottom: 5px;"><strong>{{ $display->title3 }}</strong></h5>
             <div class="kolom" id="scrollingDiv3">
-            <p class="card-text my-0"><br></p>
+              <p class="card-text my-0"><br></p>
+              <p class="card-text my-0"><br></p>
+              <p class="card-text my-0"><br></p>
+              <p class="card-text my-0"><br></p>
+              <p class="card-text my-0"><br></p>
+              <p class="card-text my-0"><br></p>
             <p class="card-text my-0"><strong>{!! nl2br($display->text3) !!}</strong></p>
+            <p class="card-text my-0"><br></p>
+            <p class="card-text my-0"><br></p>
+            <p class="card-text my-0"><br></p>
+            <p class="card-text my-0"><br></p>
+            <p class="card-text my-0"><br></p>
+            <p class="card-text my-0"><br></p>
           </div>
         </div>
     </div>
@@ -290,7 +323,18 @@
           <h5 class="card-title mb-0" style="border-bottom: 2px solid #000000;padding-bottom: 5px;"><strong>{{ $display->title4 }}</strong></h5>
           <div class="kolom" style="" id="scrollingDiv4">
             <p class="card-text my-0"><br></p>
+            <p class="card-text my-0"><br></p>
+            <p class="card-text my-0"><br></p>
+            <p class="card-text my-0"><br></p>
+            <p class="card-text my-0"><br></p>
+            <p class="card-text my-0"><br></p>
             <p class="card-text my-0"><strong>{!! nl2br($display->text4) !!}</strong></p>
+            <p class="card-text my-0"><br></p>
+            <p class="card-text my-0"><br></p>
+            <p class="card-text my-0"><br></p>
+            <p class="card-text my-0"><br></p>
+            <p class="card-text my-0"><br></p>
+            <p class="card-text my-0"><br></p>
         </div>
       </div>
   </div>
